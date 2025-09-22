@@ -11,10 +11,12 @@ interface Hero1Props {
         primary?: {
             text: string;
             url: string;
+            target?: string;
         };
         secondary?: {
             text: string;
             url: string;
+            target?: string;
         };
     };
     image: {
@@ -29,12 +31,13 @@ const Hero1 = ({
     description = "Finely crafted components built with React, Tailwind and Shadcn UI. Developers can copy and paste these blocks directly into their project.",
     buttons = {
         primary: {
-            text: "Discover all components",
-            url: "https://www.shadcnblocks.com",
+            text: "Explore Dev Works",
+            url: "#about",
         },
         secondary: {
-            text: "View on GitHub",
-            url: "https://www.shadcnblocks.com",
+            text: "Explore Media Works",
+            url: "/media",
+            target: "_blank",
         },
     },
     image = {
@@ -67,7 +70,7 @@ const Hero1 = ({
                             )}
                             {buttons.secondary && (
                                 <Button asChild variant="outline" className="w-full sm:w-auto">
-                                    <a href={buttons.secondary.url}>
+                                    <a href={buttons.secondary.url} target={buttons.secondary.target}>
                                         {buttons.secondary.text}
                                         <ArrowRight className="size-4" />
                                     </a>
