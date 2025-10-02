@@ -2,6 +2,7 @@ import { ArrowRight, ArrowUpRight } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import SplineComponent from "./spline";
 
 interface Hero1Props {
     badge?: string;
@@ -46,7 +47,7 @@ const Hero1 = ({
     },
 }: Hero1Props) => {
     return (
-        <section className="py-32">
+        <section className="py-20">
             <div className="container">
                 <div className="grid items-center gap-8 lg:grid-cols-2">
                     <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
@@ -78,11 +79,15 @@ const Hero1 = ({
                             )}
                         </div>
                     </div>
-                    <img
+                    <div className="flex flex-col">
+                        <SplineComponent></SplineComponent>
+                    </div>
+                    {/* <img
                         src={image.src}
                         alt={image.alt}
                         className="max-h-96 w-full rounded-md object-cover"
-                    />
+                    /> */}
+
                 </div>
             </div>
         </section>
