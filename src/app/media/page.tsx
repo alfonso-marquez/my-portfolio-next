@@ -2,6 +2,8 @@ import { DevProjects } from "@/components/devProjects";
 import { Hero1 } from "@/components/hero";
 import { MediaProjects } from "@/components/mediaProjects";
 import { Timeline } from "@/components/timeline";
+import { mediaCategories } from "@/lib/data";
+
 export default function MediaPage() {
     return (
         <div className="font-sans items-center justify-items-center p-8 pb-20 gap-16 sm:p-20">
@@ -42,7 +44,7 @@ export default function MediaPage() {
 
             <section id="projects" className="">
                 {/* <h2 className="text-3xl font-semibold">Projects Section</h2> */}
-                <MediaProjects heading={"Media Projects"}></MediaProjects>
+                <MediaProjects heading={"Photography"} categories={mediaCategories}></MediaProjects>
             </section>
 
             <section id="contact" className="h-100 items-center justify-center py-32 ">

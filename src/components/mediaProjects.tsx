@@ -1,45 +1,56 @@
+import {
+    Tabs,
+    TabsContent,
+    TabsList,
+    TabsTrigger,
+} from "@/components/ui/tabs"
+
 interface Feature {
-    title: string;
-    description: string;
-    image: string;
+    title: string
+    description: string
+    image: string
+}
+
+interface Category {
+    name: string
+    value: string
+    features: Feature[]
 }
 
 interface MediaProjectsProps {
-    heading: string;
-    description?: string;
-    feature1?: Feature;
-    feature2?: Feature;
-    feature3?: Feature;
-    feature4?: Feature;
+    heading: string
+    description?: string
+    categories: Category[]
 }
 
 const MediaProjects = ({
-    heading = "Media Projects",
-    description = "Mix photos and videos idk.",
-    feature1 = {
-        title: "UI/UX Design",
-        description:
-            "Creating intuitive user experiences with modern interface design principles and user-centered methodologies.",
-        image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-1.svg",
-    },
-    feature2 = {
-        title: "Responsive Development",
-        description:
-            "Building websites that look and function perfectly across all devices and screen sizes.",
-        image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-2.svg",
-    },
-    feature3 = {
-        title: "Brand Integration",
-        description:
-            "Seamlessly incorporating your brand identity into every aspect of your website's design.",
-        image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-1.svg",
-    },
-    feature4 = {
-        title: "Performance Optimization",
-        description:
-            "Ensuring fast loading times and smooth performance through optimized code and assets.",
-        image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-2.svg",
-    },
+    heading = "Photos taken by me",
+    description = "Some of my favorite photos taken by me.",
+    categories = [],
+    // feature1 = {
+    //     title: "UI/UX Design",
+    //     description:
+    //         "Creating intuitive user experiences with modern interface design principles and user-centered methodologies.",
+    //     image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-1.svg",
+    // },
+    // feature2 = {
+    //     title: "Responsive Development",
+    //     description:
+    //         "Building websites that look and function perfectly across all devices and screen sizes.",
+    //     image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-2.svg",
+    // },
+    // feature3 = {
+    //     title: "Brand Integration",
+    //     description:
+    //         "Seamlessly incorporating your brand identity into every aspect of your website's design.",
+    //     image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-1.svg",
+    // },
+    // feature4 = {
+    //     title: "Performance Optimization",
+    //     description:
+    //         "Ensuring fast loading times and smooth performance through optimized code and assets.",
+    //     image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-2.svg",
+    // },
 }: MediaProjectsProps) => {
     return (
         <div className="container py-32">
@@ -51,50 +62,38 @@ const MediaProjects = ({
                     {description}
                 </p>
             </div>
-            <div className="relative flex justify-center">
-                <div className="border-muted2 relative flex w-full flex-col border md:w-1/2 lg:w-full">
-                    <div className="relative flex flex-col lg:flex-row">
-                        <div className="border-muted2 flex flex-col justify-between border-b border-solid p-10 lg:w-3/5 lg:border-r lg:border-b-0">
-                            <h2 className="text-xl font-semibold">{feature1.title}</h2>
-                            <p className="text-muted-foreground">{feature1.description}</p>
-                            <img
-                                src={feature1.image}
-                                alt={feature1.title}
-                                className="mt-8 aspect-[1.5] h-full w-full object-cover lg:aspect-[2.4]"
-                            />
-                        </div>
-                        <div className="flex flex-col justify-between p-10 lg:w-2/5">
-                            <h2 className="text-xl font-semibold">{feature2.title}</h2>
-                            <p className="text-muted-foreground">{feature2.description}</p>
-                            <img
-                                src={feature2.image}
-                                alt={feature2.title}
-                                className="mt-8 aspect-[1.45] h-full w-full object-cover"
-                            />
-                        </div>
-                    </div>
-                    <div className="border-muted2 relative flex flex-col border-t border-solid lg:flex-row">
-                        <div className="border-muted2 flex flex-col justify-between border-b border-solid p-10 lg:w-2/5 lg:border-r lg:border-b-0">
-                            <h2 className="text-xl font-semibold">{feature3.title}</h2>
-                            <p className="text-muted-foreground">{feature3.description}</p>
-                            <img
-                                src={feature3.image}
-                                alt={feature3.title}
-                                className="mt-8 aspect-[1.45] h-full w-full object-cover"
-                            />
-                        </div>
-                        <div className="flex flex-col justify-between p-10 lg:w-3/5">
-                            <h2 className="text-xl font-semibold">{feature4.title}</h2>
-                            <p className="text-muted-foreground">{feature4.description}</p>
-                            <img
-                                src={feature4.image}
-                                alt={feature4.title}
-                                className="mt-8 aspect-[1.5] h-full w-full object-cover lg:aspect-[2.4]"
-                            />
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+            {categories.length > 0 && (
+                <Tabs defaultValue={categories[0].value}>
+                    {/* Tabs header */}
+                    <TabsList>
+                        {categories.map((cat) => (
+                            <TabsTrigger key={cat.value} value={cat.value}>
+                                {cat.name}
+                            </TabsTrigger>
+                        ))}
+                    </TabsList>
+
+                    {/* Tabs content */}
+                    {categories.map((cat) => (
+                        <TabsContent key={cat.value} value={cat.value}>
+                            <div className="relative flex justify-center">
+                                <div className="relative grid w-full grid-cols-1 gap-5 md:grid-cols-2">
+                                    {cat.features.map((feature, i) => (
+                                        <div key={i} className="flex flex-col justify-between p-5">
+                                            <img
+                                                src={feature.image}
+                                                alt={feature.title}
+                                                className="aspect-auto object-cover"
+                                            />
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </TabsContent>
+                    ))}
+                </Tabs>
+            )}
         </div>
     );
 };
