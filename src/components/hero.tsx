@@ -27,7 +27,6 @@ interface Hero1Props {
 }
 
 const Hero1 = ({
-    badge = "✨ Your Website Builder",
     heading = "Blocks Built With Shadcn & Tailwind",
     description = "Finely crafted components built with React, Tailwind and Shadcn UI. Developers can copy and paste these blocks directly into their project.",
     buttons = {
@@ -48,15 +47,9 @@ const Hero1 = ({
 }: Hero1Props) => {
     return (
         <section className="py-20">
-            <div className="container">
+            <div className="container mx-auto px-4">
                 <div className="grid items-center gap-8 lg:grid-cols-2">
                     <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
-                        {badge && (
-                            <Badge variant="outline">
-                                {badge}
-                                <ArrowUpRight className="ml-2 size-4" />
-                            </Badge>
-                        )}
                         <h1 className="my-6 text-pretty text-4xl font-bold lg:text-6xl">
                             {heading}
                         </h1>

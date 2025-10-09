@@ -14,30 +14,30 @@ interface DevProjectsProps {
 }
 
 const DevProjects = ({
-    heading = "Blocks built with Shadcn & Tailwind",
-    description = "Finely crafted components built with React, Tailwind and Shadcn UI. Developers can copy and paste these blocks directly into their project.",
+    heading = "Heading",
+    description = "Development Projects. Work in Progress.",
     feature1 = {
-        title: "UI/UX Design",
+        title: "My Portfolio",
         description:
-            "Creating intuitive user experiences with modern interface design principles and user-centered methodologies.",
+            "Work in Progress. This is my personal portfolio website showcasing my projects and skills.",
         image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-1.svg",
     },
     feature2 = {
-        title: "Responsive Development",
+        title: "Project 1",
         description:
-            "Building websites that look and function perfectly across all devices and screen sizes.",
+            "Work in Progress",
         image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-2.svg",
     },
     feature3 = {
-        title: "Brand Integration",
+        title: "Project 2",
         description:
-            "Seamlessly incorporating your brand identity into every aspect of your website's design.",
+            "Work in Progress",
         image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-1.svg",
     },
     feature4 = {
-        title: "Performance Optimization",
+        title: "Project 3",
         description:
-            "Ensuring fast loading times and smooth performance through optimized code and assets.",
+            "Work in Progress",
         image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-2.svg",
     },
 }: DevProjectsProps) => {

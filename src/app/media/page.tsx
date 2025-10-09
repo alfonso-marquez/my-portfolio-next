@@ -36,7 +36,7 @@ export default function MediaPage() {
                         image: "images/quezon.png",
                         title: "Software Engineer",
                         description:
-                            "Full-Stack Developer who specializes at none.",
+                            "Full-Stack Developer with nearly 4 years of experience building scalable web applications using C#, Laravel, React, and AWS.",
                     },
                 ]} />
             </section>

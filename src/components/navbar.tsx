@@ -58,7 +58,7 @@ export function NavigationMenuCustom() {
     return (
         <div className="fixed top-0 left-0 w-full z-50 bg-background/90 backdrop-blur-sm shadow-md">
             <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
-                <div className="text-lg font-bold">{pathName === "/" ? "Dev " : "Media"} Portfolio</div>
+                <div className="text-md font-bold hidden lg:block">{pathName === "/" ? "Dev " : "Media"} Portfolio</div>
                 <NavigationMenu viewport={false}>
                     <NavigationMenuList>
                         <NavigationMenuItem>
