@@ -125,7 +125,7 @@ html {
 }
 
 #description-animate{
-  width: 30ch;
+  width: 100%;
   text-wrap: nowrap;
   overflow: hidden;
   animation: typing 2s steps(30) infinite alternate-reverse;
