@@ -11,16 +11,15 @@ export default function Home() {
                 {/* <h2 className="text-3xl font-semibold">About Section</h2> */}
                 <Timeline heading={"About Me"} description={"I’m Alfonso Marquez, a full-stack developer with nearly 4 years of experience building scalable web applications using C#, Laravel, React, and AWS. Beyond development, I explore storytelling through photography and film, capturing moments with the same precision I bring to code. Big fan of The Maine and twenty one pilots."} buttons={{
                     primary: {
-                        text: "Start",
+                        text: "View Projects",
                         url: "#projects"
                     },
                     secondary: {
-                        text: "Contact me",
+                        text: "Let's Connect!",
                         url: "#contact"
                     }
                 }} />
             </section>
-
 
             <section id="projects" className="">
                 {/* <h2 className="text-3xl font-semibold">Projects Section</h2> */}
@@ -31,7 +30,7 @@ export default function Home() {
                 <h2 className="text-3xl font-semibold">Contact Section</h2>
                 <p className="text-lg my-2">Reach out via email or social media.</p>
                 <div>
-                    <a href="mailto:marquez.josealfonso@gmail.com">marquez.josealfonso@gmail.com</a>
+                    <a className="hover:underline" href="mailto:marquez.josealfonso@gmail.com">marquez.josealfonso@gmail.com</a>
                 </div>
             </section>
         </div>

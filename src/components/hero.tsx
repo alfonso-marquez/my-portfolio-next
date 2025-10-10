@@ -50,10 +50,10 @@ const Hero1 = ({
             <div className="container mx-auto px-4">
                 <div className="grid items-center gap-8 lg:grid-cols-2">
                     <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
-                        <h1 className="my-6 text-pretty text-4xl font-bold lg:text-6xl">
+                        <h1 className="mt-6 text-pretty text-4xl font-bold lg:text-6xl">
                             {heading}
                         </h1>
-                        <p className="text-muted-foreground mb-8 max-w-xl lg:text-xl">
+                        <p className="text-muted-foreground mb-6 max-w-xl text-2xl sm:text-3xl lg:text-4xl" id="description-animate" >
                             {description}
                         </p>
                         <div className="flex w-full flex-col justify-center gap-2 sm:flex-row lg:justify-start">

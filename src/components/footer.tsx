@@ -19,7 +19,7 @@ export default function Footer() {
                         <a href="https://www.youtube.com/channel/UCI7rCtpVLhc9ZP2sKjSPlSA" target="_blank"><YoutubeIcon /></a>
                     </div>
                     <div >
-                        <p className="text-sm">
+                        <p className="text-sm text-muted-foreground">
                             &copy; {new Date().getFullYear()} Alfonso Marquez
                         </p>
                     </div>

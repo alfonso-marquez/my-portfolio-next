@@ -27,11 +27,11 @@ const Timeline = ({
     description = "We believe in creating lasting partnerships with our clients, focusing on long-term success through collaborative innovation and dedicated support.",
     buttons = {
         primary: {
-            text: "Start",
+            text: "See My Work",
             url: "#projects"
         },
         secondary: {
-            text: "Contact me",
+            text: "Let's Connect!",
             url: "#contact"
         },
     },
@@ -49,7 +49,7 @@ const Timeline = ({
         },
         {
             image: "images/hongkongstreets.png",
-            title: "Photographer/Videographer",
+            title: "Photographer / Videographer",
             description: "To see the world, things dangerous to come to, to see behind walls, to draw closer, to find each other and to feel. That is the Purpose of Life. - Secret Life of Walter Mitty",
         },
     ],
@@ -61,7 +61,7 @@ const Timeline = ({
                     <h2 className="mt-4 mb-6 text-4xl font-semibold md:text-5xl">
                         {heading}
                     </h2>
-                    <p className="font-medium text-muted-foreground md:text-xl">
+                    <p className="font-medium text-muted-foreground md:text-xl" >
                         {description}
                     </p>
                     <div className="mt-8 flex flex-col gap-4 lg:flex-row">

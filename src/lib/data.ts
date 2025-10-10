@@ -3,41 +3,50 @@ export const mediaCategories = [
     name: "Concert",
     value: "concert",
     features: [
-      {
-        title: "C1",
-        description: "",
-        image: "images/media/concerts/IMG_4054.JPEG",
-      },
-      {
-        title: "C2",
-        description: "",
-        image: "images/media/concerts/IMG_4689.JPEG",
-      },
-      {
-        title: "C3",
-        description: "",
+       {
+        title: "The Maine - Back in Manila",
+        description: "John posted these photos on his Instagram.",
+        device: "Shot on iPhone 15 Pro Max",
         image: "images/media/concerts/IMG_4065.JPEG",
       },
       {
-        title: "C4",
-        description: "",
-        image: "images/media/concerts/IMG_4976.JPEG",
-      },
-      {
-        title: "C5",
-        description: "",
-        image: "images/media/concerts/IMG_4454.JPEG",
-      },
-      {
-        title: "C5",
-        description: "",
+        title: "The Maine - Back in Manila",
+        description: "John posted these photos on his Instagram.",
+        device: "Shot on iPhone 15 Pro Max",
         image: "images/media/concerts/IMG_4797.JPEG",
       },
+     
+      {
+        title: "The Maine - Back in Manila",
+        description: "Band used this photo for their Instagram post.",
+        device: "Shot on iPhone 15 Pro Max",
+        image: "images/media/concerts/IMG_4689.JPEG",
+      },
+      {
+        title: "The Maine - Back in Manila",
+        description: "John posted these photos on his Instagram.",
+        device: "Shot on iPhone 15 Pro Max",
+        image: "images/media/concerts/IMG_4793.JPEG",
+      },
+      {
+        title: "The Maine - Back in Manila",
+        description: "September 2024",
+        device: "Shot on iPhone 15 Pro Max",
+        image: "images/media/concerts/IMG_4054.JPEG",
+      },
+      
+      {
+        title: "The Maine - Back in Manila",
+        description: "September 2024",
+        device: "Shot on iPhone 15 Pro Max",
+        image: "images/media/concerts/IMG_4454.JPEG",
+      },
+      
     ],
   },
   // {
-  //   name: "Portraits",
-  //   value: "portraits",
+  //   name: "Toys",
+  //   value: "toys",
   //   features: [
   //     {
   //       title: "C1",
@@ -76,33 +85,39 @@ export const mediaCategories = [
     value: "pets",
     features: [
       {
-        title: "C1",
+        title: "Seungming",
         description: "",
+        device: "Sony A6700, 17-70mm f/2.8",
         image: "images/media/pets/DSC01914.JPG",
       },
       {
-        title: "C2",
+        title: "Sophie",
         description: "",
+        device: "Sony A6700, 17-70mm f/2.8",
         image: "images/media/pets/DSC01937.JPG",
       },
       {
-        title: "C3",
+        title: "Daijin",
         description: "",
+        device: "Sony A6700, 17-70mm f/2.8",
         image: "images/media/pets/DSC05865.JPG",
       },
       {
-        title: "C4",
+        title: "Seungming",
         description: "",
+        device: "Sony A6700, 17-70mm f/2.8",
         image: "images/media/pets/DSC04661.JPG",
       },
       {
-        title: "C5",
+        title: "Sophie",
         description: "",
+        device: "Sony A6700, 17-70mm f/2.8",
         image: "images/media/pets/DSC04726.JPG",
       },
       {
-        title: "C5",
+        title: "Daijin",
         description: "",
+        device: "Sony A6700, 17-70mm f/2.8",
         image: "images/media/pets/DSC04611.JPG",
       },
     ],
@@ -112,14 +127,16 @@ export const mediaCategories = [
     value: "travel",
     features: [
       {
-        title: "T1",
+        title: "Hong Kong 2024",
         description: "",
+        device: "Sony ZVE-10, 16-50mm F3.5-5.6 Kit Lens",
         image: "images/media/travel/DSC02391.JPEG",
       },
 
       {
-        title: "T3",
+        title: "Hong Kong 2024",
         description: "",
+        device: "Sony ZVE-10, 17-70mm f/2.8",
         image: "images/media/travel/DSC02757.JPEG",
       },
 
@@ -129,29 +146,34 @@ export const mediaCategories = [
       //   image: "images/media/travel/DSC02797.JPEG",
       // },
       {
-        title: "T4",
+        title: "Hong Kong 2024",
         description: "",
+        device: "Sony ZVE-10, 16-50mm F3.5-5.6 Kit Lens",
         image: "images/media/travel/DSC02845.JPEG",
       },
 
       {
-        title: "T4",
+        title: "Hong Kong 2024",
         description: "",
+        device: "Sony ZVE-10, 16-50mm F3.5-5.6 Kit Lens",
         image: "images/media/travel/DSC02889.JPEG",
       },
       {
-        title: "T2",
+        title: "Hong Kong 2024",
         description: "",
+        device: "Sony ZVE-10, 16-50mm F3.5-5.6 Kit Lens",
         image: "images/media/travel/DSC02672.JPEG",
       },
       {
-        title: "T4",
+        title: "Hong Kong 2024",
         description: "",
+        device: "Sony ZVE-10, 16-50mm F3.5-5.6 Kit Lens",
         image: "images/media/travel/DSC02792.JPEG",
       },
       {
-        title: "T4",
+        title: "Hong Kong 2024",
         description: "",
+        device: "Sony ZVE-10, 16-50mm F3.5-5.6 Kit Lens",
         image: "images/media/travel/DSC02871.JPEG",
       },
     ],

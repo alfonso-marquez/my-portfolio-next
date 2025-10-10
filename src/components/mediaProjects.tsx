@@ -8,6 +8,7 @@ import {
 interface Feature {
     title: string
     description: string
+    device: string
     image: string
 }
 
@@ -77,21 +78,32 @@ const MediaProjects = ({
                     {/* Tabs content */}
                     {categories.map((cat) => (
                         <TabsContent key={cat.value} value={cat.value}>
-                            <div className="relative flex justify-center">
-                                <div className="relative grid w-full grid-cols-1 gap-5 md:grid-cols-2">
+                            <div className="flex justify-center mt-6">
+                                <div className="grid w-full grid-cols-1 gap-5 md:grid-cols-2">
                                     {cat.features.map((feature, i) => (
-                                        <div key={i} className="flex flex-col justify-between p-5">
+                                        <div
+                                            key={i}
+                                            className="relative overflow-hidden group rounded-md"
+                                            aria-hidden="false"
+                                        >
                                             <img
                                                 src={feature.image}
                                                 alt={feature.title}
-                                                className="aspect-auto object-cover"
+                                                className="w-full h-full object-cover block transition-transform duration-700 ease-in-out group-hover:scale-110"
                                             />
+
+                                            <div className="absolute inset-0 bg-black/20 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center pointer-events-none group-hover:pointer-events-auto z-10">
+                                                <p className="text-white text-lg font-semibold">{feature.title}</p>
+                                                <p className="text-white text-lg">{feature.description}</p>
+                                                <p className="text-white text-lg">{feature.device}</p>
+                                            </div>
                                         </div>
                                     ))}
                                 </div>
                             </div>
                         </TabsContent>
                     ))}
+
                 </Tabs>
             )}
         </div>
