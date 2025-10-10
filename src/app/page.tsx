@@ -1,6 +1,10 @@
 import { DevProjects } from "@/components/devProjects";
 import { Hero1 } from "@/components/hero";
 import { Timeline } from "@/components/timeline";
+import GithubIcon from "@/components/icons/githubIcon";
+import InstagramIcon from "@/components/icons/instagramIcon";
+import LinkedinIcon from "@/components/icons/linkedinIcon";
+import YoutubeIcon from "@/components/icons/youtubeIcon";
 
 export default function Home() {
     return (
@@ -30,7 +34,13 @@ export default function Home() {
                 <h2 className="text-3xl font-semibold">Contact Section</h2>
                 <p className="text-lg my-2">Reach out via email or social media.</p>
                 <div>
-                    <a className="hover:underline" href="mailto:marquez.josealfonso@gmail.com">marquez.josealfonso@gmail.com</a>
+                    <a className="text-lg hover:underline" href="mailto:marquez.josealfonso@gmail.com">marquez.josealfonso@gmail.com</a>
+                </div>
+                <div className="my-4 flex gap-2">
+                    <a href="https://github.com/alfonso-marquez" target="_blank"><GithubIcon /></a>
+                    <a href="https://linkedin.com/in/fonsomarquez/" target="_blank"><LinkedinIcon /></a>
+                    <a href="https://www.instagram.com/alfonsomrqz/" target="_blank"><InstagramIcon /></a>
+                    <a href="https://www.youtube.com/channel/UCI7rCtpVLhc9ZP2sKjSPlSA" target="_blank"><YoutubeIcon /></a>
                 </div>
             </section>
         </div>

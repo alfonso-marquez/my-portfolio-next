@@ -1,6 +1,6 @@
 export default function YoutubeIcon() {
     return (
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width={24} height={24}
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width={40} height={40}
             className="
                 text-gray-600 hover:text-black 
                 dark:text-gray-400 dark:hover:text-white 
