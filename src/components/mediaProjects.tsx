@@ -28,30 +28,6 @@ const MediaProjects = ({
     heading = "Photos taken by me",
     description = "Some of my favorite photos taken by me.",
     categories = [],
-    // feature1 = {
-    //     title: "UI/UX Design",
-    //     description:
-    //         "Creating intuitive user experiences with modern interface design principles and user-centered methodologies.",
-    //     image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-1.svg",
-    // },
-    // feature2 = {
-    //     title: "Responsive Development",
-    //     description:
-    //         "Building websites that look and function perfectly across all devices and screen sizes.",
-    //     image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-2.svg",
-    // },
-    // feature3 = {
-    //     title: "Brand Integration",
-    //     description:
-    //         "Seamlessly incorporating your brand identity into every aspect of your website's design.",
-    //     image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-1.svg",
-    // },
-    // feature4 = {
-    //     title: "Performance Optimization",
-    //     description:
-    //         "Ensuring fast loading times and smooth performance through optimized code and assets.",
-    //     image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-2.svg",
-    // },
 }: MediaProjectsProps) => {
     return (
         <div className="container py-32">
@@ -95,7 +71,6 @@ const MediaProjects = ({
                                             <div className="absolute inset-0 bg-black/20 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center pointer-events-none group-hover:pointer-events-auto z-10">
                                                 <p className="text-white text-lg font-semibold">{feature.title}</p>
                                                 <p className="text-white text-lg">{feature.description}</p>
-                                                <p className="text-white text-lg">{feature.device}</p>
                                             </div>
                                         </div>
                                     ))}
