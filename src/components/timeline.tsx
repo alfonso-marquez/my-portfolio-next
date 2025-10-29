@@ -5,12 +5,6 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/u
 import Image from "next/image";
 import { useEffect, useState, useRef } from "react";
 
-interface Stage {
-    image: string;
-    title: string;
-    description?: string;
-}
-
 interface TimelineProps {
     heading?: string;
     description?: string;

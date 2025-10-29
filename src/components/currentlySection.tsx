@@ -60,7 +60,7 @@ export function CurrentlySection({ data }: CurrentlySectionProps) {
 
     return (
         <div className="w-full rounded-lg border bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 dark:from-primary/20 dark:via-secondary/20 dark:to-accent/20 p-6 text-foreground shadow-sm">
-            <h2 className="mb-6 text-2xl font-semibold">What I'm Up To</h2>
+            <h2 className="mb-6 text-2xl font-semibold">What I&apos;m Up To</h2>
 
             {/* Currently Learning */}
             <div className="mb-6">

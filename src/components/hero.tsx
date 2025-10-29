@@ -1,6 +1,4 @@
-import { ArrowRight, ArrowUpRight } from "lucide-react";
-
-import { Badge } from "@/components/ui/badge";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SplineComponent from "./spline";
 

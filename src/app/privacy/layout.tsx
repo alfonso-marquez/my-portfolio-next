@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import { ThemeProvider } from "@/components/theme-provider"
-import { NavigationMenuCustom } from "@/components/navbar";
 import Footer from "@/components/footer";
 
 
