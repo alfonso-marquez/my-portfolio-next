@@ -73,7 +73,7 @@ const DevProjects = ({
                 </p>
             </div>
             <div className="relative flex justify-center">
-                <div className="border-muted2 relative flex w-full flex-col border md:w-1/2 lg:w-full">
+                <div className="border-muted2 relative flex w-full flex-col border md:w-2/3 lg:w-full">
                     <div className="relative flex flex-col lg:flex-row">
                         <div className="border-muted2 flex flex-col justify-between border-b border-solid p-10 lg:w-3/5 lg:border-r lg:border-b-0">
                             <div className="flex items-center gap-3">
