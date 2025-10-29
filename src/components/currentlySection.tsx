@@ -110,7 +110,7 @@ export function CurrentlySection({ data }: CurrentlySectionProps) {
                     <span className="text-lg">⚠️</span>
                     <h3 className="text-lg font-medium">Accountability Corner</h3>
                 </div>
-                <div className="ml-7 space-y-3">
+                <div className="ml-0 md:ml-7 space-y-3">
                     <p className="text-sm text-muted-foreground">
                         I have a bad habit of buying new courses and games before finishing the old ones.
                     </p>
