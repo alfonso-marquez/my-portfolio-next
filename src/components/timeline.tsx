@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 
-interface Feature {
+interface Stage {
     image: string;
     title: string;
     description: string;
@@ -19,7 +19,7 @@ interface TimelineProps {
             url: string;
         };
     };
-    features?: Feature[];
+    stages?: Stage[];
 }
 
 const Timeline = ({
@@ -35,7 +35,7 @@ const Timeline = ({
             url: "#contact"
         },
     },
-    features = [
+    stages = [
         {
             image: "images/quezon.png",
             title: "Software Engineer",
@@ -74,18 +74,18 @@ const Timeline = ({
                     </div>
                 </div>
                 <div className="flex flex-col gap-12 md:gap-20">
-                    {features.map((feature, index) => (
+                    {stages.map((stage, index) => (
                         <div key={index} className="rounded-xl border p-2">
                             <img
-                                src={feature.image}
-                                alt={feature.title}
+                                src={stage.image}
+                                alt={stage.title}
                                 className="aspect-square w-full rounded-xl border border-dashed object-cover"
                             />
                             <div className="p-6">
                                 <h3 className="mb-1 text-2xl font-semibold">
-                                    {feature.title}
+                                    {stage.title}
                                 </h3>
-                                <p className="text-muted-foreground">{feature.description}</p>
+                                <p className="text-muted-foreground">{stage.description}</p>
                             </div>
                         </div>
                     ))}

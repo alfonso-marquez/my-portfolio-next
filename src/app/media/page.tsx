@@ -10,6 +10,8 @@ import { mediaCategories } from "@/lib/data";
 
 
 export default function MediaPage() {
+    const description = "Hi, I am Alfonso Marquez, an aspiring creative exploring photography and film as ways to express myself. I’m especially interested in music, street, and animal photography. Help me find my art style!";
+
     return (
         <div className="font-sans items-center justify-items-center p-8 pb-20 gap-16 sm:p-20">
             <Hero1 heading="Jose Alfonso Marquez" description="Photographer / Videographer" buttons={{
@@ -26,24 +28,7 @@ export default function MediaPage() {
             {/* Sections */}
             <section id="about" className=" flex items-center justify-center">
                 {/* <h2 className="text-3xl font-semibold">About Section</h2> */}
-                <Timeline heading={"About Me"} description={"I’m Alfonso Marquez, aspiring creative. Blahh blahh blah insert stuff here"} features={[
-                    {
-                        image: "images/hongkongstreets.png",
-                        title: "Photographer / Videographer",
-                        description: "To see the world, things dangerous to come to, to see behind walls, to draw closer, to find each other and to feel. That is the Purpose of Life. - Secret Life of Walter Mitty",
-                    },
-                    {
-                        image: "images/soloarmy.JPEG",
-                        title: "Enlisted Personnel",
-                        description: "Special enlist (Software Developer) who served in the Philippine Army. ",
-                    },
-                    {
-                        image: "images/quezon.png",
-                        title: "Software Engineer",
-                        description:
-                            "Full-Stack Developer with nearly 4 years of experience building scalable web applications using C#, Laravel, React, and AWS.",
-                    },
-                ]} />
+                <Timeline heading={"About Me"} description={description} />
             </section>
 
 

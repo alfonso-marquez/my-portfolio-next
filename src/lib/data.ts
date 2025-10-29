@@ -2,7 +2,7 @@ export const mediaCategories = [
   {
     name: "Concert",
     value: "concert",
-    features: [
+    images: [
       {
         title: "The Maine - Back in Manila",
         description: "John posted these photos on his Instagram.",
@@ -46,7 +46,7 @@ export const mediaCategories = [
   // {
   //   name: "Toys",
   //   value: "toys",
-  //   features: [
+  //   images: [
   //     {
   //       title: "C1",
   //       description: "",
@@ -82,7 +82,7 @@ export const mediaCategories = [
   {
     name: "Pets",
     value: "pets",
-    features: [
+    images: [
       {
         title: "Seungming",
         description: "",
@@ -124,7 +124,7 @@ export const mediaCategories = [
   {
     name: "Travel",
     value: "travel",
-    features: [
+    images: [
       {
         title: "Hong Kong 2024",
         description: "",
@@ -228,9 +228,8 @@ export const devProjects: DevProject[] = [
   },
   {
     title: "AI Image Gallery",
-    description: "Under development Image Gallery with AI Analysis features.",
-    image:
-      "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-2.svg",
+    description: "Under development Image Gallery with AI Analysis images.",
+    image: "/images/projects/ai-image-gallery-screenshot.png",
     status: "development",
     repoUrl: "https://github.com/alfonso-marquez",
     tech: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Supabase", "AWS"],
@@ -238,7 +237,7 @@ export const devProjects: DevProject[] = [
   },
   {
     title: "Coming Soon",
-    description: "Brainstorming ideas for my next project.",
+    description: "Still in planning stage. So here is my cat in the meantime.",
     image: "/images/media/pets/DSC04611.JPG",
     status: "planned",
     repoUrl: "https://github.com/alfonso-marquez",

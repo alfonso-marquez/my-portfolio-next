@@ -5,7 +5,7 @@ import {
     TabsTrigger,
 } from "@/components/ui/tabs"
 
-interface Feature {
+interface Image {
     title: string
     description: string
     device: string
@@ -15,7 +15,7 @@ interface Feature {
 interface Category {
     name: string
     value: string
-    features: Feature[]
+    images: Image[]
 }
 
 interface MediaProjectsProps {
@@ -56,21 +56,22 @@ const MediaProjects = ({
                         <TabsContent key={cat.value} value={cat.value}>
                             <div className="flex justify-center mt-6">
                                 <div className="grid w-full grid-cols-1 gap-5 md:grid-cols-2">
-                                    {cat.features.map((feature, i) => (
+                                    {cat.images.map((image, i) => (
                                         <div
                                             key={i}
                                             className="relative overflow-hidden group rounded-md"
                                             aria-hidden="false"
                                         >
                                             <img
-                                                src={feature.image}
-                                                alt={feature.title}
+                                                src={image.image}
+                                                alt={image.title}
                                                 className="w-full h-full object-cover block transition-transform duration-700 ease-in-out group-hover:scale-110"
                                             />
 
                                             <div className="absolute inset-0 bg-black/20 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center pointer-events-none group-hover:pointer-events-auto z-10">
-                                                <p className="text-white text-lg font-semibold">{feature.title}</p>
-                                                <p className="text-white text-lg">{feature.description}</p>
+                                                <p className="text-white text-lg font-semibold">{image.title}</p>
+                                                <p className="text-white text-lg">{image.description}</p>
+                                                <p className="text-white text-sm mt-2">{image.device}</p>
                                             </div>
                                         </div>
                                     ))}
