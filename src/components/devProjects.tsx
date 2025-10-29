@@ -1,5 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { devProjects as defaultDevProjects, type DevProject } from "@/lib/data";
+import Image from "next/image";
 
 interface DevProjectsProps {
     heading: string;
@@ -93,11 +94,16 @@ const DevProjects = ({
                             </div>
                             <p className="text-muted-foreground">{project1.description}</p>
                             {renderMeta(project1)}
-                            <img
-                                src={project1.image}
-                                alt={project1.title}
-                                className="mt-8 aspect-[1.5] h-full w-full object-cover lg:aspect-[2.4]"
-                            />
+                            <div className="relative mt-8 aspect-[1.5] w-full lg:aspect-[2.4]">
+                                <Image
+                                    src={project1.image}
+                                    alt={project1.title}
+                                    fill
+                                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 60vw, 800px"
+                                    className="object-cover"
+                                    priority={false}
+                                />
+                            </div>
                         </div>
                         <div className="flex flex-col justify-between p-10 lg:w-2/5">
                             <div className="flex items-center gap-3">
@@ -117,11 +123,16 @@ const DevProjects = ({
                             </div>
                             <p className="text-muted-foreground">{project2.description}</p>
                             {renderMeta(project2)}
-                            <img
-                                src={project2.image}
-                                alt={project2.title}
-                                className="mt-8 aspect-[1.45] h-full w-full object-cover"
-                            />
+                            <div className="relative mt-8 aspect-[1.45] w-full">
+                                <Image
+                                    src={project2.image}
+                                    alt={project2.title}
+                                    fill
+                                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 40vw, 500px"
+                                    className="object-cover"
+                                    priority={false}
+                                />
+                            </div>
                         </div>
                     </div>
                     <div className="border-muted2 relative flex flex-col border-t border-solid lg:flex-row">
@@ -143,11 +154,16 @@ const DevProjects = ({
                             </div>
                             <p className="text-muted-foreground">{project3.description}</p>
                             {renderMeta(project3)}
-                            <img
-                                src={project3.image}
-                                alt={project3.title}
-                                className="mt-8 aspect-[1.45] h-full w-full object-cover"
-                            />
+                            <div className="relative mt-8 aspect-[1.45] w-full">
+                                <Image
+                                    src={project3.image}
+                                    alt={project3.title}
+                                    fill
+                                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 40vw, 500px"
+                                    className="object-cover"
+                                    priority={false}
+                                />
+                            </div>
                         </div>
                         <div className="flex flex-col justify-between p-10 lg:w-3/5">
                             <div className="flex items-center gap-3">
@@ -167,11 +183,16 @@ const DevProjects = ({
                             </div>
                             <p className="text-muted-foreground">{project4.description}</p>
                             {renderMeta(project4)}
-                            <img
-                                src={project4.image}
-                                alt={project4.title}
-                                className="mt-8 aspect-[1.5] h-full w-full object-cover lg:aspect-[2.4]"
-                            />
+                            <div className="relative mt-8 aspect-[1.5] w-full lg:aspect-[2.4]">
+                                <Image
+                                    src={project4.image}
+                                    alt={project4.title}
+                                    fill
+                                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 60vw, 800px"
+                                    className="object-cover"
+                                    priority={false}
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>

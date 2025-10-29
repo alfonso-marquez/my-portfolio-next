@@ -4,8 +4,9 @@ import {
     TabsList,
     TabsTrigger,
 } from "@/components/ui/tabs"
+import Image from "next/image"
 
-interface Image {
+interface ImageType {
     title: string
     description: string
     device: string
@@ -15,7 +16,7 @@ interface Image {
 interface Category {
     name: string
     value: string
-    images: Image[]
+    images: ImageType[]
 }
 
 interface MediaProjectsProps {
@@ -62,10 +63,13 @@ const MediaProjects = ({
                                             className="relative overflow-hidden group rounded-md"
                                             aria-hidden="false"
                                         >
-                                            <img
+                                            <Image
                                                 src={image.image}
                                                 alt={image.title}
-                                                className="w-full h-full object-cover block transition-transform duration-700 ease-in-out group-hover:scale-110"
+                                                className="object-cover block transition-transform duration-700 ease-in-out group-hover:scale-110"
+                                                width={500}
+                                                height={500}
+                                                priority={false}
                                             />
 
                                             <div className="absolute inset-0 bg-black/20 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center pointer-events-none group-hover:pointer-events-auto z-10">
