@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import SplineComponent from "./spline";
 
-interface Hero1Props {
+interface HeroProps {
     badge?: string;
     heading: string;
     description: string;
@@ -20,13 +20,9 @@ interface Hero1Props {
             target?: string;
         };
     };
-    image: {
-        src: string;
-        alt: string;
-    };
 }
 
-const Hero1 = ({
+const Hero = ({
     heading = "Blocks Built With Shadcn & Tailwind",
     description = "Finely crafted components built with React, Tailwind and Shadcn UI. Developers can copy and paste these blocks directly into their project.",
     buttons = {
@@ -40,11 +36,7 @@ const Hero1 = ({
             target: "_blank",
         },
     },
-    image = {
-        src: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-1.svg",
-        alt: "Hero section demo image showing interface components",
-    },
-}: Hero1Props) => {
+}: HeroProps) => {
     return (
         <section className="py-20">
             <div className="container mx-auto px-4">
@@ -75,16 +67,10 @@ const Hero1 = ({
                     <div className="flex flex-col">
                         <SplineComponent></SplineComponent>
                     </div>
-                    {/* <img
-                        src={image.src}
-                        alt={image.alt}
-                        className="max-h-96 w-full rounded-md object-cover"
-                    /> */}
-
                 </div>
             </div>
         </section>
     );
 };
 
-export { Hero1 };
+export { Hero };
