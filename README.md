@@ -1,6 +1,6 @@
 # my-portfolio-next
 
-Personal portfolio built with Next.js and TypeScript showcasing my work in both software development and media. It features development projects with live/status badges, tech stack tags, and a dark mode indicator, plus curated media galleries for concerts, pets, and travel photography.
+Personal portfolio built with Next.js and TypeScript showcasing my work in both software development and media. It features development projects with live/status badges, tech stack tags, and a dark mode indicator, plus curated media galleries for concerts, pets, and travel (addming more soon) photography.
 
 ## Features
 
@@ -18,39 +18,8 @@ Personal portfolio built with Next.js and TypeScript showcasing my work in both 
 
 - Next.js, React, TypeScript
 - Tailwind CSS
-- shadcn/ui (Radix-based components)
-
-## Project Structure```
-
-src/
-app/
-page.tsx # Home
-about/page.tsx # About
-contact/page.tsx # Contact
-media/page.tsx # Media gallery
-layout.tsx # Root layout + ThemeProvider
-globals.css # Tailwind styles
-components/
-devProjects.tsx # Projects grid with badges/tags
-ui/ # shadcn/ui components (Badge, Tabs, etc.)
-lib/
-data.ts # Media categories + Dev projects data
-utils.ts
-public/
-images/ # Project/media assets
-
-```
-
-## Data-driven Projects
-
-Edit `src/lib/data.ts` to manage your projects:
-
-- `status`: "deployed" | "development" | "planned" | "archived"
-- `siteUrl` and `repoUrl` for conditional linking
-- `tech`: string[] to render stack tags
-- `darkMode`: boolean to show the "Dark mode" indicator
+- shadcn/ui
 
 ## License
 
 MIT
-```
