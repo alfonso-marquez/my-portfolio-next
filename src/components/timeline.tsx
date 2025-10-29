@@ -139,14 +139,14 @@ const Timeline = ({
                                     <div className="pointer-events-none absolute inset-0 flex items-end justify-end p-3">
                                         <Button
                                             size="sm"
-                                            className="pointer-events-auto bg-black/70 text-white hover:bg-black/80"
+                                            className="cursor-pointer pointer-events-auto z-10 bg-black/60 text-white hover:bg-black/90"
                                             onClick={() => {
                                                 setDialogVideoSrc(stage.modalVideo!);
                                                 setDialogTitle(stage.title);
                                                 setDialogOpen(true);
                                             }}
                                         >
-                                            Watch clip
+                                            A day in the life...
                                         </Button>
                                     </div>
                                 )}
@@ -171,17 +171,17 @@ const Timeline = ({
             }}>
                 <DialogContent className="sm:max-w-[800px]">
                     <DialogHeader>
-                        <DialogTitle>{dialogTitle}</DialogTitle>
+                        <DialogTitle>A Day in the Life of an {dialogTitle}</DialogTitle>
                     </DialogHeader>
                     {dialogVideoSrc && (
                         <video
                             ref={dialogVideoRef}
                             src={dialogVideoSrc}
                             className="mt-2 w-full rounded-md"
-                            controls
                             autoPlay
                             playsInline
                             preload="metadata"
+                            loop
                         />
                     )}
                 </DialogContent>
