@@ -2,6 +2,8 @@
 
 Personal portfolio built with Next.js and TypeScript showcasing my work in both software development and media. It features development projects with live/status badges, tech stack tags, and a dark mode indicator, plus curated media galleries for concerts, pets, and travel (addming more soon) photography.
 
+🔗 **Live Site:** [https://alfonso-marquez-portfolio.vercel.app](https://alfonso-marquez-portfolio.vercel.app)
+
 ## Features
 
 - Next.js App Router with TypeScript
