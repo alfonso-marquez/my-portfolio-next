@@ -10,7 +10,7 @@ import YoutubeIcon from "@/components/icons/youtubeIcon";
 
 export default function Home() {
     return (
-        <div className="font-sans items-center justify-items-center  pb-20 gap-16">
+        <div className="font-sans items-center justify-items-center pb-20 gap-16">
             <Hero heading="Jose Alfonso Marquez" description="Software Engineer" />
             <section id="about" className="w-full bg-gradient-to-br from-primary/8 via-secondary/8 to-accent/8 dark:from-primary/16 dark:via-secondary/16 dark:to-accent/10 px-8">
                 <div className="flex items-center justify-center">
@@ -29,7 +29,7 @@ export default function Home() {
                     <CurrentlySection data={currentlyData} />
                 </div>
             </section>
-            <section id="projects" className="">
+            <section id="projects">
                 <DevProjects heading={"Development Projects"}></DevProjects>
             </section>
 

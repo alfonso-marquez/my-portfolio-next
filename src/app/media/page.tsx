@@ -35,7 +35,7 @@ export default function MediaPage() {
     ]
 
     return (
-        <div className="font-sans items-center justify-items-center p-8 pb-20 gap-16 sm:p-20">
+        <div className="font-sans items-center justify-items-center pb-20 gap-16">
             <Hero heading="Jose Alfonso Marquez" description="Photographer / Videographer" buttons={{
                 primary: {
                     text: "Explore Media Works",
@@ -57,7 +57,7 @@ export default function MediaPage() {
                 </div>
             </section>
 
-            <section id="projects" className="">
+            <section id="projects">
                 <MediaProjects heading={"Photography"} categories={mediaCategories}></MediaProjects>
             </section>
 

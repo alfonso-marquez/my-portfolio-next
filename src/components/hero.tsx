@@ -46,7 +46,7 @@ const Hero = ({
                         <p className="text-muted-foreground mb-6 max-w-xl text-2xl sm:text-3xl lg:text-4xl" id="description-animate" >
                             {description}
                         </p>
-                        <div className="flex w-full flex-col justify-center gap-2 sm:flex-row lg:justify-start">
+                        <div className="flex w-full flex-col justify-center gap-2 sm:flex-row lg:justify-start px-16 md:px-0">
                             {buttons.primary && (
                                 <Button asChild className="w-full sm:w-auto">
                                     <a href={buttons.primary.url}>{buttons.primary.text}</a>

@@ -110,7 +110,7 @@ const Timeline = ({
                     <p className="font-medium text-muted-foreground md:text-xl transition-all duration-1000 ease-in-out">
                         {activeDescription}
                     </p>
-                    <div className="mt-8 flex flex-col gap-4 lg:flex-row">
+                    <div className="mt-8 flex flex-col gap-2 lg:flex-row px-8 md:px-0">
                         <Button className="gap-2" size="lg" asChild>
                             <a href={buttons.primary.url}>{buttons.primary.text}</a>
                         </Button>
