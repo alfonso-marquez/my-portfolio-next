@@ -1,32 +1,34 @@
 import { DevProjects } from "@/components/devProjects";
-import { Hero1 } from "@/components/hero";
+import { Hero } from "@/components/hero";
 import { Timeline } from "@/components/timeline";
+import { CurrentlySection } from "@/components/currentlySection";
+import { currentlyData } from "@/lib/data";
 import GithubIcon from "@/components/icons/githubIcon";
 import InstagramIcon from "@/components/icons/instagramIcon";
 import LinkedinIcon from "@/components/icons/linkedinIcon";
 import YoutubeIcon from "@/components/icons/youtubeIcon";
 
 export default function Home() {
-    const description = "Hi, I am Jose Alfonso Marquez, a full-stack developer passionate about building scalable and meaningful web applications. I focus on crafting clean, maintainable code and seamless user experiences that bring ideas to life. My work combines strong backend engineering and modern frontend design, supported by cloud technologies and AI integrations. I thrive in collaborative, Agile environments where curiosity and precision drive results."
-
     return (
-        <div className="font-sans items-center justify-items-center p-8 pb-20 gap-16 sm:p-20">
-            <Hero1 heading="Jose Alfonso Marquez" description="Software Engineer" image={{ src: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-1.svg", alt: "Hero section demo image showing interface components" }} />
-            {/* Sections */}
-            <section id="about" className=" flex items-center justify-center">
-                {/* <h2 className="text-3xl font-semibold">About Section</h2> */}
-                <Timeline heading={"About Me"} description={description} buttons={{
-                    primary: {
-                        text: "View Projects",
-                        url: "#projects"
-                    },
-                    secondary: {
-                        text: "Let's Connect!",
-                        url: "#contact"
-                    }
-                }} />
+        <div className="font-sans items-center justify-items-center  pb-20 gap-16">
+            <Hero heading="Jose Alfonso Marquez" description="Software Engineer" />
+            <section id="about" className="w-full bg-gradient-to-br from-primary/8 via-secondary/8 to-accent/8 dark:from-primary/16 dark:via-secondary/16 dark:to-accent/10 px-8">
+                <div className="flex items-center justify-center">
+                    <Timeline heading={"About Me"} buttons={{
+                        primary: {
+                            text: "View Projects",
+                            url: "#projects"
+                        },
+                        secondary: {
+                            text: "Let's Connect!",
+                            url: "#contact"
+                        }
+                    }} />
+                </div>
+                <div className="container relative mx-auto max-w-4xl px-4 pb-32">
+                    <CurrentlySection data={currentlyData} />
+                </div>
             </section>
-
             <section id="projects" className="">
                 <DevProjects heading={"Development Projects"}></DevProjects>
             </section>
@@ -44,6 +46,6 @@ export default function Home() {
                     <a href="https://www.youtube.com/channel/UCI7rCtpVLhc9ZP2sKjSPlSA" target="_blank"><YoutubeIcon /></a>
                 </div>
             </section>
-        </div>
+        </div >
     );
 }

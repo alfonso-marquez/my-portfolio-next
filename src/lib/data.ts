@@ -7,39 +7,39 @@ export const mediaCategories = [
         title: "The Maine - Back in Manila",
         description: "John posted these photos on his Instagram.",
         device: "Shot on iPhone 15 Pro Max",
-        image: "images/media/concerts/IMG_4065.JPEG",
+        image: "/images/media/concerts/IMG_4065.JPEG",
       },
       {
         title: "The Maine - Back in Manila",
         description: "John posted these photos on his Instagram.",
         device: "Shot on iPhone 15 Pro Max",
-        image: "images/media/concerts/IMG_4797.JPEG",
+        image: "/images/media/concerts/IMG_4797.JPEG",
       },
 
       {
         title: "The Maine - Back in Manila",
         description: "Band used this photo for their Instagram post.",
         device: "Shot on iPhone 15 Pro Max",
-        image: "images/media/concerts/IMG_4689.JPEG",
+        image: "/images/media/concerts/IMG_4689.JPEG",
       },
       {
         title: "The Maine - Back in Manila",
         description: "John posted these photos on his Instagram.",
         device: "Shot on iPhone 15 Pro Max",
-        image: "images/media/concerts/IMG_4793.JPEG",
+        image: "/images/media/concerts/IMG_4793.JPEG",
       },
       {
         title: "The Maine - Back in Manila",
         description: "September 2024",
         device: "Shot on iPhone 15 Pro Max",
-        image: "images/media/concerts/IMG_4054.JPEG",
+        image: "/images/media/concerts/IMG_4054.JPEG",
       },
 
       {
         title: "The Maine - Back in Manila",
         description: "September 2024",
         device: "Shot on iPhone 15 Pro Max",
-        image: "images/media/concerts/IMG_4454.JPEG",
+        image: "/images/media/concerts/IMG_4454.JPEG",
       },
     ],
   },
@@ -87,37 +87,37 @@ export const mediaCategories = [
         title: "Seungming",
         description: "",
         device: "Sony A6700, 17-70mm f/2.8",
-        image: "images/media/pets/DSC01914.JPG",
+        image: "/images/media/pets/DSC01914.JPG",
       },
       {
         title: "Sophie",
         description: "",
         device: "Sony A6700, 17-70mm f/2.8",
-        image: "images/media/pets/DSC01937.JPG",
+        image: "/images/media/pets/DSC01937.JPG",
       },
       {
         title: "Daijin",
         description: "",
         device: "Sony A6700, 17-70mm f/2.8",
-        image: "images/media/pets/DSC05865.JPG",
+        image: "/images/media/pets/DSC05865.JPG",
       },
       {
         title: "Seungming",
         description: "",
         device: "Sony A6700, 17-70mm f/2.8",
-        image: "images/media/pets/DSC04661.JPG",
+        image: "/images/media/pets/DSC04661.JPG",
       },
       {
         title: "Sophie",
         description: "",
         device: "Sony A6700, 17-70mm f/2.8",
-        image: "images/media/pets/DSC04726.JPG",
+        image: "/images/media/pets/DSC04726.JPG",
       },
       {
         title: "Daijin",
         description: "",
         device: "Sony A6700, 17-70mm f/2.8",
-        image: "images/media/pets/DSC04611.JPG",
+        image: "/images/media/pets/DSC04611.JPG",
       },
     ],
   },
@@ -129,51 +129,45 @@ export const mediaCategories = [
         title: "Hong Kong 2024",
         description: "",
         device: "Sony ZVE-10, 16-50mm F3.5-5.6 Kit Lens",
-        image: "images/media/travel/DSC02391.JPEG",
+        image: "/images/media/travel/DSC02391.JPEG",
       },
 
       {
         title: "Hong Kong 2024",
         description: "",
-        device: "Sony ZVE-10, 17-70mm f/2.8",
-        image: "images/media/travel/DSC02757.JPEG",
+        device: "Sony ZVE-10, 16-50mm F3.5-5.6 Kit Lens",
+        image: "/images/media/travel/DSC02757.JPEG",
+      },
+      {
+        title: "Hong Kong 2024",
+        description: "",
+        device: "Sony ZVE-10, 16-50mm F3.5-5.6 Kit Lens",
+        image: "/images/media/travel/DSC02845.JPEG",
       },
 
+      {
+        title: "Hong Kong 2024",
+        description: "",
+        device: "Sony ZVE-10, 16-50mm F3.5-5.6 Kit Lens",
+        image: "/images/media/travel/DSC02889.JPEG",
+      },
       // {
-      //   title: "T4",
+      //   title: "Hong Kong 2024",
       //   description: "",
-      //   image: "images/media/travel/DSC02797.JPEG",
+      //   device: "Sony ZVE-10, 16-50mm F3.5-5.6 Kit Lens",
+      //   image: "/images/media/travel/DSC02672.JPEG",
       // },
       {
         title: "Hong Kong 2024",
         description: "",
         device: "Sony ZVE-10, 16-50mm F3.5-5.6 Kit Lens",
-        image: "images/media/travel/DSC02845.JPEG",
-      },
-
-      {
-        title: "Hong Kong 2024",
-        description: "",
-        device: "Sony ZVE-10, 16-50mm F3.5-5.6 Kit Lens",
-        image: "images/media/travel/DSC02889.JPEG",
+        image: "/images/media/travel/DSC02792.JPEG",
       },
       {
         title: "Hong Kong 2024",
         description: "",
         device: "Sony ZVE-10, 16-50mm F3.5-5.6 Kit Lens",
-        image: "images/media/travel/DSC02672.JPEG",
-      },
-      {
-        title: "Hong Kong 2024",
-        description: "",
-        device: "Sony ZVE-10, 16-50mm F3.5-5.6 Kit Lens",
-        image: "images/media/travel/DSC02792.JPEG",
-      },
-      {
-        title: "Hong Kong 2024",
-        description: "",
-        device: "Sony ZVE-10, 16-50mm F3.5-5.6 Kit Lens",
-        image: "images/media/travel/DSC02871.JPEG",
+        image: "/images/media/travel/DSC02871.JPEG",
       },
     ],
   },
@@ -244,3 +238,38 @@ export const devProjects: DevProject[] = [
     tech: ["TBD"],
   },
 ];
+
+// Currently activities data for About page
+export type CurrentlyData = {
+  learning: {
+    title: string;
+    platform: string;
+    progress: number; // 0-100
+  };
+  playing: {
+    title: string;
+    platform: string;
+    hoursPlayed?: number;
+  };
+  backlogs: {
+    courses: number;
+    games: number;
+  };
+};
+
+export const currentlyData: CurrentlyData = {
+  learning: {
+    title: "React - The Complete Guide (incl. Next.js, Redux)",
+    platform: "Udemy",
+    progress: 26,
+  },
+  playing: {
+    title: "Final Fantasy Rebirth",
+    platform: "PS5",
+    hoursPlayed: 2,
+  },
+  backlogs: {
+    courses: 6,
+    games: 7,
+  },
+};
