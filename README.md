@@ -1,40 +1,56 @@
-<<<<<<< HEAD
 # my-portfolio-next
-=======
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+Personal portfolio built with Next.js and TypeScript showcasing my work in both software development and media. It features development projects with live/status badges, tech stack tags, and a dark mode indicator, plus curated media galleries for concerts, pets, and travel photography.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- Next.js App Router with TypeScript
+- Tailwind CSS styling + shadcn/ui components
+- Dark mode support with theme toggle
+- Projects section with:
+  - Status badge (Live, In Development, Planned, Archived)
+  - Conditional link: live site if deployed, else GitHub repo
+  - Tech stack tags (e.g., Next.js, React, Supabase)
+  - Dark mode indicator per project
+- Media galleries grouped by category (Concert, Pets, Travel)
+
+## Tech Stack
+
+- Next.js, React, TypeScript
+- Tailwind CSS
+- shadcn/ui (Radix-based components)
+
+## Project Structure```
+
+src/
+app/
+page.tsx # Home
+about/page.tsx # About
+contact/page.tsx # Contact
+media/page.tsx # Media gallery
+layout.tsx # Root layout + ThemeProvider
+globals.css # Tailwind styles
+components/
+devProjects.tsx # Projects grid with badges/tags
+ui/ # shadcn/ui components (Badge, Tabs, etc.)
+lib/
+data.ts # Media categories + Dev projects data
+utils.ts
+public/
+images/ # Project/media assets
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Data-driven Projects
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Edit `src/lib/data.ts` to manage your projects:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `status`: "deployed" | "development" | "planned" | "archived"
+- `siteUrl` and `repoUrl` for conditional linking
+- `tech`: string[] to render stack tags
+- `darkMode`: boolean to show the "Dark mode" indicator
 
-## Learn More
+## License
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
->>>>>>> 2dac73c (Initial commit from Create Next App)
+MIT
+```
