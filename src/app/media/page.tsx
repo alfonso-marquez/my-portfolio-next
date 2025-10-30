@@ -61,7 +61,7 @@ export default function MediaPage() {
                 <MediaProjects heading={"Photography"} categories={mediaCategories}></MediaProjects>
             </section>
 
-            <section id="contact" className="h-100 items-center justify-center py-32 ">
+            <section id="contact" className="h-100 flex flex-col items-center justify-center text-center py-32 px-4">
                 <h2 className="text-3xl font-semibold">Contact Section</h2>
                 <p className="text-lg my-2">Reach out via email or social media.</p>
                 <div>
