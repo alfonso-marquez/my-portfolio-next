@@ -140,10 +140,14 @@ export function CurrentlySection({ data }: CurrentlySectionProps) {
                         </p>
                     )}
                     {clickCount >= 5 && (
-                        <p className="text-sm font-medium text-muted-foreground animate-in fade-in">
-                            Fine! You can stop now. Thank you for your commitment! 🫡
-                        </p>
+                        <>
+                            <p className="text-sm font-medium text-muted-foreground animate-in fade-in">
+                                Fine! You can stop now. Thank you for your commitment! 🫡
+                            </p>
+                            <p className="text-sm font-medium text-muted-foreground animate-in fade-in">Implementation under development. 🚧</p>
+                        </>
                     )}
+
                 </div>
             </div>
         </div>
