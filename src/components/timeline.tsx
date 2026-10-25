@@ -1,11 +1,13 @@
 'use client';
 
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import Image from "next/image";
 import { useEffect, useState, useRef } from "react";
 
 interface TimelineProps {
+    badge?: string; // Small status pill above the heading, e.g. "Work in progress"
     heading?: string;
     description?: string;
     buttons?: {
@@ -21,10 +23,11 @@ interface TimelineProps {
     }>;
 }
 
-const initialDescription = "Hi, I am Alfonso Marquez, a full-stack developer passionate about building scalable and meaningful web applications. I focus on crafting clean, maintainable code and seamless user experiences that bring ideas to life.";
+const initialDescription = "Full-stack developer with 5+ years of experience across C#, Laravel, React and AWS, now building AI-powered features into web apps.";
 
 
 const Timeline = ({
+    badge,
     heading = "About Me",
     description = initialDescription,
     buttons = {
@@ -42,7 +45,7 @@ const Timeline = ({
             image: "/images/quezon.png",
             title: "Software Engineer",
             description:
-                "Full-Stack Developer with nearly 4 years of experience building scalable web applications using C#, Laravel, React, and AWS.",
+                "Full-Stack Developer with 5+ years of experience building scalable web applications using C#, Laravel, React, and AWS.",
             sidebarDescription: initialDescription
         },
         {
@@ -104,6 +107,9 @@ const Timeline = ({
         <div className="container max-w-6xl py-32">
             <div className="relative grid gap-16 md:grid-cols-2">
                 <div className="top-40 h-fit md:sticky">
+                    {badge && (
+                        <Badge variant="outline" className="mb-2">{badge}</Badge>
+                    )}
                     <h2 className="mt-4 mb-6 text-4xl font-semibold md:text-5xl">
                         {heading}
                     </h2>

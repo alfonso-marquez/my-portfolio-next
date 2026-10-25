@@ -12,10 +12,13 @@ import {
 } from "@/components/ui/navigation-menu"
 import ModeToggle from "./toggleDarkMode"
 import { usePathname } from "next/navigation"
+import { cn } from "@/lib/utils"
 
 
 export function NavigationMenuCustom() {
     const pathName = usePathname();
+    // Tighter padding on phones so all links and the theme toggle fit at 400px
+    const linkStyle = cn(navigationMenuTriggerStyle(), "px-2.5 sm:px-4");
 
     return (
         <div className="fixed top-0 left-0 w-full z-50 bg-background/90 backdrop-blur-sm shadow-md">
@@ -24,22 +27,31 @@ export function NavigationMenuCustom() {
                 <NavigationMenu viewport={false}>
                     <NavigationMenuList>
                         <NavigationMenuItem>
-                            <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+                            <NavigationMenuLink asChild className={linkStyle}>
                                 <Link href="#home">Home</Link>
                             </NavigationMenuLink>
                         </NavigationMenuItem>
+                        {pathName === "/" && (
+                            <NavigationMenuItem>
+                                <NavigationMenuLink asChild className={linkStyle}>
+                                    <Link href="#about">About</Link>
+                                </NavigationMenuLink>
+                            </NavigationMenuItem>
+                        )}
                         <NavigationMenuItem>
-                            <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-                                <Link href="#about">About</Link>
+                            <NavigationMenuLink asChild className={linkStyle}>
+                                <Link href="#projects">{pathName === "/" ? "Projects" : "Photos"}</Link>
                             </NavigationMenuLink>
                         </NavigationMenuItem>
+                        {pathName !== "/" && (
+                            <NavigationMenuItem>
+                                <NavigationMenuLink asChild className={linkStyle}>
+                                    <Link href="#video">Videos</Link>
+                                </NavigationMenuLink>
+                            </NavigationMenuItem>
+                        )}
                         <NavigationMenuItem>
-                            <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-                                <Link href="#projects">Projects</Link>
-                            </NavigationMenuLink>
-                        </NavigationMenuItem>
-                        <NavigationMenuItem>
-                            <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+                            <NavigationMenuLink asChild className={linkStyle}>
                                 <Link href="#contact">Contact</Link>
                             </NavigationMenuLink>
                         </NavigationMenuItem>

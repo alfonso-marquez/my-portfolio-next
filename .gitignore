@@ -38,3 +38,6 @@ next-env.d.ts
 TODO
 
 .gitignore
+
+# playwright screenshots
+.playwright-mcp/

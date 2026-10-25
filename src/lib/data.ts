@@ -1,173 +1,271 @@
+// Photo gallery data used by the MediaProjects component.
+// One tab per gig. `name` is the short tab label, `title` is the heading shown above the photos.
+// Single-act gigs use `images`; multi-act gigs use `sets`, one section per artist.
+// Gigs with no images show a "coming soon" note.
 export const mediaCategories = [
   {
-    name: "Concert",
-    value: "concert",
+    name: "The Maine Manila '24",
+    value: "the-maine",
+    title: "The Maine - Back in Manila",
+    date: "September 2024",
     images: [
       {
-        title: "The Maine - Back in Manila",
         description: "John posted these photos on his Instagram.",
         device: "Shot on iPhone 15 Pro Max",
         image: "/images/media/concerts/IMG_4065.JPEG",
       },
       {
-        title: "The Maine - Back in Manila",
         description: "John posted these photos on his Instagram.",
         device: "Shot on iPhone 15 Pro Max",
         image: "/images/media/concerts/IMG_4797.JPEG",
       },
-
       {
-        title: "The Maine - Back in Manila",
         description: "Band used this photo for their Instagram post.",
         device: "Shot on iPhone 15 Pro Max",
         image: "/images/media/concerts/IMG_4689.JPEG",
       },
       {
-        title: "The Maine - Back in Manila",
         description: "John posted these photos on his Instagram.",
         device: "Shot on iPhone 15 Pro Max",
         image: "/images/media/concerts/IMG_4793.JPEG",
       },
       {
-        title: "The Maine - Back in Manila",
-        description: "September 2024",
+        description: "",
         device: "Shot on iPhone 15 Pro Max",
         image: "/images/media/concerts/IMG_4054.JPEG",
       },
-
       {
-        title: "The Maine - Back in Manila",
-        description: "September 2024",
+        description: "",
         device: "Shot on iPhone 15 Pro Max",
         image: "/images/media/concerts/IMG_4454.JPEG",
       },
     ],
   },
-  // {
-  //   name: "Toys",
-  //   value: "toys",
-  //   images: [
-  //     {
-  //       title: "C1",
-  //       description: "",
-  //       image: "images/media/concerts/IMG_4054.JPEG",
-  //     },
-  //     {
-  //       title: "C2",
-  //       description: "",
-  //       image: "images/media/concerts/IMG_4689.JPEG",
-  //     },
-  //     {
-  //       title: "C3",
-  //       description: "",
-  //       image: "images/media/concerts/IMG_4065.JPEG",
-  //     },
-  //     {
-  //       title: "C4",
-  //       description: "",
-  //       image: "images/media/concerts/IMG_4976.JPEG",
-  //     },
-  //     {
-  //       title: "C5",
-  //       description: "",
-  //       image: "images/media/concerts/IMG_4454.JPEG",
-  //     },
-  //     {
-  //       title: "C5",
-  //       description: "",
-  //       image: "images/media/concerts/IMG_4797.JPEG",
-  //     },
-  //   ],
-  // },
   {
-    name: "Pets",
-    value: "pets",
-    images: [
+    name: "NAPAKA MUSICK",
+    value: "napaka-musick",
+    title: "NAPAKA MUSICK",
+    date: "November 23, 2025",
+    sets: [
       {
-        title: "Seungming",
-        description: "",
-        device: "Sony A6700, 17-70mm f/2.8",
-        image: "/images/media/pets/DSC01914.JPG",
+        name: "badwave",
+        images: [
+          {
+            description: "",
+            device: "",
+            image: "/images/media/napaka-musick/badwave-1.jpg",
+          },
+          {
+            description: "",
+            device: "",
+            image: "/images/media/napaka-musick/badwave-2.jpg",
+          },
+          {
+            description: "",
+            device: "",
+            image: "/images/media/napaka-musick/badwave-3.jpg",
+          },
+          {
+            description: "",
+            device: "",
+            image: "/images/media/napaka-musick/badwave-4.jpg",
+          },
+          {
+            description: "",
+            device: "",
+            image: "/images/media/napaka-musick/badwave-5.jpg",
+          },
+        ],
       },
       {
-        title: "Sophie",
-        description: "",
-        device: "Sony A6700, 17-70mm f/2.8",
-        image: "/images/media/pets/DSC01937.JPG",
+        name: "Brickcity",
+        images: [
+          {
+            description: "",
+            device: "",
+            image: "/images/media/napaka-musick/brickcity-1.jpg",
+          },
+          {
+            description: "",
+            device: "",
+            image: "/images/media/napaka-musick/brickcity-2.jpg",
+          },
+          {
+            description: "",
+            device: "",
+            image: "/images/media/napaka-musick/brickcity-3.jpg",
+          },
+          {
+            description: "",
+            device: "",
+            image: "/images/media/napaka-musick/brickcity-4.jpg",
+          },
+        ],
       },
       {
-        title: "Daijin",
-        description: "",
-        device: "Sony A6700, 17-70mm f/2.8",
-        image: "/images/media/pets/DSC05865.JPG",
-      },
-      {
-        title: "Seungming",
-        description: "",
-        device: "Sony A6700, 17-70mm f/2.8",
-        image: "/images/media/pets/DSC04661.JPG",
-      },
-      {
-        title: "Sophie",
-        description: "",
-        device: "Sony A6700, 17-70mm f/2.8",
-        image: "/images/media/pets/DSC04726.JPG",
-      },
-      {
-        title: "Daijin",
-        description: "",
-        device: "Sony A6700, 17-70mm f/2.8",
-        image: "/images/media/pets/DSC04611.JPG",
+        name: "daintsu",
+        images: [
+          {
+            description: "",
+            device: "",
+            image: "/images/media/napaka-musick/daintsu-1.jpg",
+          },
+          {
+            description: "",
+            device: "",
+            image: "/images/media/napaka-musick/daintsu-2.jpg",
+          },
+          {
+            description: "",
+            device: "",
+            image: "/images/media/napaka-musick/daintsu-3.jpg",
+          },
+          {
+            description: "",
+            device: "",
+            image: "/images/media/napaka-musick/daintsu-4.jpg",
+          },
+          {
+            description: "",
+            device: "",
+            image: "/images/media/napaka-musick/daintsu-5.jpg",
+          },
+        ],
       },
     ],
   },
   {
-    name: "Travel",
-    value: "travel",
-    images: [
+    name: "20 Years of Wabi-Sabi",
+    value: "wabi-sabi-20-years",
+    title: "20 Years of Wabi-Sabi",
+    date: "October 23, 2026",
+    venue: "Street Kohi",
+    sets: [
       {
-        title: "Hong Kong 2024",
-        description: "",
-        device: "Sony ZVE-10, 16-50mm F3.5-5.6 Kit Lens",
-        image: "/images/media/travel/DSC02391.JPEG",
+        name: "Johnoy Danao",
+        images: [
+          {
+            description: "",
+            device: "",
+            image: "/images/media/wabi-sabi/johnoy-1.jpg",
+          },
+          {
+            description: "",
+            device: "",
+            image: "/images/media/wabi-sabi/johnoy-2.jpg",
+          },
+          {
+            description: "",
+            device: "",
+            image: "/images/media/wabi-sabi/johnoy-3.jpg",
+          },
+          {
+            description: "",
+            device: "",
+            image: "/images/media/wabi-sabi/johnoy-4.jpg",
+          },
+          {
+            description: "",
+            device: "",
+            image: "/images/media/wabi-sabi/johnoy-5.jpg",
+          },
+          {
+            description: "",
+            device: "",
+            image: "/images/media/wabi-sabi/johnoy-6.jpg",
+          },
+        ],
       },
-
       {
-        title: "Hong Kong 2024",
-        description: "",
-        device: "Sony ZVE-10, 16-50mm F3.5-5.6 Kit Lens",
-        image: "/images/media/travel/DSC02757.JPEG",
+        name: "Reese Lansangan",
+        images: [
+          {
+            description: "",
+            device: "",
+            image: "/images/media/wabi-sabi/reese-1.jpg",
+          },
+          {
+            description: "",
+            device: "",
+            image: "/images/media/wabi-sabi/reese-2.jpg",
+          },
+          {
+            description: "",
+            device: "",
+            image: "/images/media/wabi-sabi/reese-3.jpg",
+          },
+          {
+            description: "",
+            device: "",
+            image: "/images/media/wabi-sabi/reese-4.jpg",
+          },
+          {
+            description: "",
+            device: "",
+            image: "/images/media/wabi-sabi/reese-5.jpg",
+          },
+          {
+            description: "",
+            device: "",
+            image: "/images/media/wabi-sabi/reese-6.jpg",
+          },
+          {
+            description: "",
+            device: "",
+            image: "/images/media/wabi-sabi/reese-crowd.jpg",
+            wide: true,
+          },
+        ],
       },
       {
-        title: "Hong Kong 2024",
-        description: "",
-        device: "Sony ZVE-10, 16-50mm F3.5-5.6 Kit Lens",
-        image: "/images/media/travel/DSC02845.JPEG",
+        name: "totâ",
+        images: [
+          {
+            description: "",
+            device: "",
+            image: "/images/media/wabi-sabi/tota-1.jpg",
+          },
+          {
+            description: "",
+            device: "",
+            image: "/images/media/wabi-sabi/tota-2.jpg",
+          },
+          {
+            description: "",
+            device: "",
+            image: "/images/media/wabi-sabi/tota-3.jpg",
+          },
+          {
+            description: "",
+            device: "",
+            image: "/images/media/wabi-sabi/tota-4.jpg",
+          },
+        ],
       },
-
       {
-        title: "Hong Kong 2024",
-        description: "",
-        device: "Sony ZVE-10, 16-50mm F3.5-5.6 Kit Lens",
-        image: "/images/media/travel/DSC02889.JPEG",
-      },
-      // {
-      //   title: "Hong Kong 2024",
-      //   description: "",
-      //   device: "Sony ZVE-10, 16-50mm F3.5-5.6 Kit Lens",
-      //   image: "/images/media/travel/DSC02672.JPEG",
-      // },
-      {
-        title: "Hong Kong 2024",
-        description: "",
-        device: "Sony ZVE-10, 16-50mm F3.5-5.6 Kit Lens",
-        image: "/images/media/travel/DSC02792.JPEG",
-      },
-      {
-        title: "Hong Kong 2024",
-        description: "",
-        device: "Sony ZVE-10, 16-50mm F3.5-5.6 Kit Lens",
-        image: "/images/media/travel/DSC02871.JPEG",
+        name: "Maya's Anklet",
+        images: [
+          {
+            description: "",
+            device: "",
+            image: "/images/media/wabi-sabi/maya-1.jpg",
+          },
+          {
+            description: "",
+            device: "",
+            image: "/images/media/wabi-sabi/maya-2.jpg",
+          },
+          {
+            description: "",
+            device: "",
+            image: "/images/media/wabi-sabi/maya-3.jpg",
+          },
+          {
+            description: "",
+            device: "",
+            image: "/images/media/wabi-sabi/maya-5.jpg",
+          },
+        ],
       },
     ],
   },
@@ -246,7 +344,7 @@ export const devProjects: DevProject[] = [
   {
     title: "Custom CRM",
     description: "Under development. So here is my cat in the meantime.",
-    image: "/images/media/pets/DSC04611.JPG",
+    image: "/images/projects/crm-placeholder-cat.jpg",
     status: "planned",
     repoUrl: "https://github.com/alfonso-marquez",
     tech: ["TBD"],

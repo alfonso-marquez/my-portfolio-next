@@ -6,6 +6,7 @@ interface HeroProps {
     badge?: string;
     heading: string;
     description: string;
+    tagline?: string;
     buttons?: {
         primary?: {
             text: string;
@@ -23,6 +24,7 @@ interface HeroProps {
 const Hero = ({
     heading = "Blocks Built With Shadcn & Tailwind",
     description = "Finely crafted components built with React, Tailwind and Shadcn UI. Developers can copy and paste these blocks directly into their project.",
+    tagline,
     buttons = {
         primary: {
             text: "Explore Dev Works",
@@ -46,6 +48,11 @@ const Hero = ({
                         <p className="text-muted-foreground mb-6 max-w-xl text-2xl sm:text-3xl lg:text-4xl" id="description-animate" >
                             {description}
                         </p>
+                        {tagline && (
+                            <p className="text-muted-foreground mb-6 max-w-xl text-base sm:text-lg">
+                                {tagline}
+                            </p>
+                        )}
                         <div className="flex w-full flex-col justify-center gap-2 sm:flex-row lg:justify-start px-16 md:px-0">
                             {buttons.primary && (
                                 <Button asChild className="w-full sm:w-auto">

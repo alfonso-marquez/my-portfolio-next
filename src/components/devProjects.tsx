@@ -3,12 +3,14 @@ import { devProjects as defaultDevProjects, type DevProject } from "@/lib/data";
 import Image from "next/image";
 
 interface DevProjectsProps {
+    badge?: string; // Small status pill above the heading, e.g. "Work in progress"
     heading: string;
     description?: string;
     projects?: DevProject[];
 }
 
 const DevProjects = ({
+    badge,
     heading = "Heading",
     description = "Most recent projects.",
     projects = defaultDevProjects,
@@ -66,6 +68,9 @@ const DevProjects = ({
     return (
         <div className="container py-32">
             <div className="mb-24 flex flex-col items-center gap-6">
+                {badge && (
+                    <Badge variant="outline" className="-mb-2">{badge}</Badge>
+                )}
                 <h1 className="text-center text-3xl font-semibold lg:max-w-3xl lg:text-5xl">
                     {heading}
                 </h1>

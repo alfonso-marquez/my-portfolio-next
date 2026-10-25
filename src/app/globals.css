@@ -122,6 +122,8 @@
 }
 html {
   scroll-behavior: smooth;
+  /* Keep anchor jumps clear of the fixed navbar */
+  scroll-padding-top: 4rem;
 }
 
 #description-animate{
