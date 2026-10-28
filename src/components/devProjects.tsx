@@ -22,15 +22,6 @@ const DevProjects = ({
                     {t}
                 </Badge>
             ))}
-            {item.darkMode && (
-                <Badge variant="secondary">
-                    <span
-                        aria-hidden
-                        className="mr-1 inline-block h-2 w-2 rounded-full bg-emerald-500"
-                    />
-                    Dark mode
-                </Badge>
-            )}
         </div>
     );
     const getBadgeMeta = (project: DevProject): { label: string; variant: "default" | "secondary" | "destructive" | "outline"; href?: string } => {
@@ -71,10 +62,10 @@ const DevProjects = ({
                 {badge && (
                     <Badge variant="outline" className="-mb-2">{badge}</Badge>
                 )}
-                <h1 className="text-center text-3xl font-semibold lg:max-w-3xl lg:text-5xl">
+                <h1 className="text-center text-3xl font-semibold tracking-tight lg:text-5xl lg:max-w-3xl">
                     {heading}
                 </h1>
-                <p className="text-center text-lg font-medium text-muted-foreground md:max-w-4xl lg:text-xl">
+                <p className="text-center text-lg leading-relaxed text-muted-foreground lg:text-xl md:max-w-2xl">
                     {description}
                 </p>
             </div>

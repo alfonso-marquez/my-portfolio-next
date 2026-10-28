@@ -1,6 +1,5 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import SplineComponent from "./spline";
 
 interface HeroProps {
     badge?: string;
@@ -38,18 +37,18 @@ const Hero = ({
     },
 }: HeroProps) => {
     return (
-        <section className="py-20">
+        <section className="w-full py-20">
             <div className="container mx-auto px-4">
-                <div className="grid items-center gap-8 lg:grid-cols-2">
+                <div className="max-w-4xl">
                     <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
-                        <h1 className="mt-6 text-pretty text-4xl font-bold lg:text-6xl">
+                        <h1 className="mt-6 text-pretty text-5xl font-semibold leading-[1.05] tracking-tight lg:text-7xl">
                             {heading}
                         </h1>
                         <p className="text-muted-foreground mb-6 max-w-xl text-2xl sm:text-3xl lg:text-4xl" id="description-animate" >
                             {description}
                         </p>
                         {tagline && (
-                            <p className="text-muted-foreground mb-6 max-w-xl text-base sm:text-lg">
+                            <p className="text-muted-foreground mb-6 max-w-xl text-base leading-relaxed sm:text-lg">
                                 {tagline}
                             </p>
                         )}
@@ -68,9 +67,6 @@ const Hero = ({
                                 </Button>
                             )}
                         </div>
-                    </div>
-                    <div className="flex flex-col">
-                        <SplineComponent></SplineComponent>
                     </div>
                 </div>
             </div>

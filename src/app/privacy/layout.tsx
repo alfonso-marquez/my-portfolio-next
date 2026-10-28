@@ -1,5 +1,4 @@
 import type { Metadata, Viewport } from "next";
-import { ThemeProvider } from "@/components/theme-provider"
 import Footer from "@/components/footer";
 
 
@@ -19,14 +18,9 @@ export default function PrivacyLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ThemeProvider
-      attribute="class"
-      defaultTheme="system"
-      enableSystem
-      disableTransitionOnChange
-    >
+    <>
       <main>{children}</main>
       <Footer />
-    </ThemeProvider>
+    </>
   );
 }

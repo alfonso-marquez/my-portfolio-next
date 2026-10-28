@@ -1,6 +1,7 @@
 // Photo gallery data used by the MediaProjects component.
 // One tab per gig. `name` is the short tab label, `title` is the heading shown above the photos.
 // Single-act gigs use `images`; multi-act gigs use `sets`, one section per artist.
+// `note` is an optional line under the gig heading, e.g. a credit.
 // Gigs with no images show a "coming soon" note.
 export const mediaCategories = [
   {
@@ -8,6 +9,7 @@ export const mediaCategories = [
     value: "the-maine",
     title: "The Maine - Back in Manila",
     date: "September 2024",
+    note: "Used by The Maine on their official Instagram",
     images: [
       {
         description: "John posted these photos on his Instagram.",
@@ -286,7 +288,6 @@ export type DevProject = {
   siteUrl?: string; // Live site if deployed
   repoUrl?: string; // GitHub repo as fallback or reference
   tech?: string[]; // Technology stack to render as tags/badges
-  darkMode?: boolean; // Whether dark mode is implemented
 };
 
 export const devProjects: DevProject[] = [
@@ -299,7 +300,6 @@ export const devProjects: DevProject[] = [
     siteUrl: "https://alfonso-marquez-portfolio.vercel.app",
     repoUrl: "https://github.com/alfonso-marquez/my-portfolio-next",
     tech: ["Next.js", "React", "TypeScript", "Tailwind CSS", "shadcn/ui"],
-    darkMode: true,
   },
   {
     title: "Photo Library App",
@@ -317,7 +317,6 @@ export const devProjects: DevProject[] = [
       "Postgres",
       "shadcn/ui",
     ],
-    darkMode: false,
   },
   {
     title: "AI Image Gallery",
@@ -339,7 +338,6 @@ export const devProjects: DevProject[] = [
       "AI",
       "OpenAI",
     ],
-    darkMode: true,
   },
   {
     title: "Custom CRM",

@@ -1,23 +1,17 @@
-import { Separator } from "./ui/separator";
-
-
 export default function Footer() {
     return (
-        <footer className="flex flex-col items-center justify-center w-full h-24">
-            <div className="max-w-[1300px] w-full p-20">
-
-                <Separator className="mt-8 mb-4" />
-                <div className="flex flex-col sm:flex-row items-center justify-between gap-2">
-                    <p className="text-sm text-muted-foreground">
-                        &copy; {new Date().getFullYear()} Alfonso Marquez
-                    </p>
-                    <a
-                        href="/privacy"
-                        className="text-sm text-muted-foreground underline hover:text-foreground transition-colors"
-                    >
+        <footer className="w-full border-t border-border">
+            {/* Same container as the page content so the edges line up */}
+            <div className="container mx-auto flex flex-col gap-2 px-4 py-8 text-sm text-zinc-500 sm:flex-row sm:items-center sm:justify-between">
+                <p>
+                    Alfonso Marquez is a software engineer and photographer based in the Philippines.
+                </p>
+                <p className="flex gap-4">
+                    <span>&copy; {new Date().getFullYear()}</span>
+                    <a href="/privacy" className="underline-offset-4 transition-colors hover:text-zinc-950 hover:underline">
                         Privacy Policy
                     </a>
-                </div>
+                </p>
             </div>
         </footer>
     );

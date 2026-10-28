@@ -1,20 +1,20 @@
 export default function PrivacyPage() {
     return (
-        <div className="container mx-auto max-w-3xl h-[80vh] p-16 mt-20">
-            <h1 className="text-4xl font-bold mb-8">Privacy Policy</h1>
+        <div className="container mx-auto max-w-3xl px-4 pt-28 pb-24 lg:pt-36">
+            <h1 className="text-4xl font-semibold tracking-tight mb-8 lg:text-5xl">Privacy Policy</h1>
 
-            <section className="space-y-6">
+            <section className="space-y-8">
                 <div>
-                    <h2 className="text-2xl font-semibold mb-2">Data We Collect</h2>
-                    <p className="text-muted-foreground">
+                    <h2 className="mb-2 text-xl font-semibold tracking-tight lg:text-2xl">Data We Collect</h2>
+                    <p className="leading-relaxed text-muted-foreground">
                         We collect anonymized visitor data (hashed IP addresses) solely to
                         prevent spam and abuse on our accountability reminder feature.
                     </p>
                 </div>
 
                 <div>
-                    <h2 className="text-2xl font-semibold mb-2">How We Use It</h2>
-                    <ul className="list-disc list-inside text-muted-foreground space-y-1">
+                    <h2 className="mb-2 text-xl font-semibold tracking-tight lg:text-2xl">How We Use It</h2>
+                    <ul className="list-disc list-inside space-y-1 leading-relaxed text-muted-foreground">
                         <li>Limit reminder clicks to prevent spam</li>
                         <li>Cannot identify individual users from this data</li>
                         <li>Data stored securely in our database</li>
@@ -23,16 +23,16 @@ export default function PrivacyPage() {
                 </div>
 
                 <div>
-                    <h2 className="text-2xl font-semibold mb-2">Your Rights</h2>
-                    <p className="text-muted-foreground">
+                    <h2 className="mb-2 text-xl font-semibold tracking-tight lg:text-2xl">Your Rights</h2>
+                    <p className="leading-relaxed text-muted-foreground">
                         Since we do not store personally identifiable information,
                         there is no personal data to request or delete.
                     </p>
                 </div>
 
                 <div>
-                    <h2 className="text-2xl font-semibold mb-2">Contact</h2>
-                    <p className="text-muted-foreground">
+                    <h2 className="mb-2 text-xl font-semibold tracking-tight lg:text-2xl">Contact</h2>
+                    <p className="leading-relaxed text-muted-foreground">
                         Questions? Email:{" "}
                         <a href="mailto:marquez.josealfonso@gmail.com" className="underline hover:text-foreground">
                             marquez.josealfonso@gmail.com

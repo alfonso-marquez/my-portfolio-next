@@ -110,10 +110,10 @@ const Timeline = ({
                     {badge && (
                         <Badge variant="outline" className="mb-2">{badge}</Badge>
                     )}
-                    <h2 className="mt-4 mb-6 text-4xl font-semibold md:text-5xl">
+                    <h2 className="mt-4 mb-6 text-3xl font-semibold tracking-tight md:text-5xl">
                         {heading}
                     </h2>
-                    <p className="font-medium text-muted-foreground md:text-xl transition-all duration-1000 ease-in-out">
+                    <p className="text-lg leading-relaxed text-muted-foreground md:text-xl transition-all duration-1000 ease-in-out">
                         {activeDescription}
                     </p>
                     <div className="mt-8 flex flex-col gap-2 lg:flex-row px-8 md:px-0">
