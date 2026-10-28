@@ -2,7 +2,6 @@
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import Image from "next/image";
 import { useEffect, useState, useRef } from "react";
 
@@ -19,11 +18,10 @@ interface TimelineProps {
         title: string;
         description: string;
         sidebarDescription?: string; // Dynamic description for sticky sidebar
-        modalVideo?: string; // Optional video to open in dialog
     }>;
 }
 
-const initialDescription = "Full-stack developer with 5+ years of experience across C#, Laravel, React and AWS, now building AI-powered features into web apps.";
+const initialDescription = "Full-stack developer with 6+ years of experience building web applications, now focused on AI agents and automation.";
 
 
 const Timeline = ({
@@ -42,24 +40,23 @@ const Timeline = ({
     },
     stages = [
         {
-            image: "/images/quezon.png",
+            image: "/images/about/software-engineer.jpg",
             title: "Software Engineer",
             description:
-                "Full-Stack Developer with 5+ years of experience building scalable web applications using C#, Laravel, React, and AWS.",
+                "I build full-stack web applications with C#, Laravel, Node.js, React and AWS, and integrate OpenAI-powered agents and automated workflows into the tools teams already use.",
             sidebarDescription: initialDescription
         },
         {
-            image: "/images/soloarmy.JPEG",
+            image: "/images/about/army.jpg",
             title: "Enlisted Personnel",
             description: "Contributed to the modernization of military systems through software solutions.",
             sidebarDescription: "Served as a Special Enlist (Software Developer) in the Philippine Army.",
-            modalVideo: "/videos/army-clips-2.mp4",
         },
         {
-            image: "/images/hongkongstreets.png",
+            image: "/images/about/photographer.jpg",
             title: "Photographer / Videographer",
             description: "To see the world, things dangerous to come to, to see behind walls, to draw closer, to find each other and to feel. That is the Purpose of Life. - Secret Life of Walter Mitty",
-            sidebarDescription: "An aspiring creative photographer and videographer who loves to capture moments and tell stories through visual media."
+            sidebarDescription: "Lately, I’ve been capturing moments through photos and video, drawn by my love of live music, TCGs and tech."
         },
     ],
 }: TimelineProps) => {
@@ -69,13 +66,6 @@ const Timeline = ({
             : description
     );
     const stageRefs = useRef<(HTMLDivElement | null)[]>([]);
-    // Removed hover video playback
-
-    // Dialog state for playing a clip
-    const [dialogOpen, setDialogOpen] = useState(false);
-    const [dialogVideoSrc, setDialogVideoSrc] = useState<string | null>(null);
-    const [dialogTitle, setDialogTitle] = useState<string>("");
-    const dialogVideoRef = useRef<HTMLVideoElement | null>(null);
 
     useEffect(() => {
         const observers = stages.map((stage, index) => {
@@ -138,24 +128,10 @@ const Timeline = ({
                                     alt={stage.title}
                                     className="w-full h-full object-cover"
                                     fill
-                                    priority={false}
+                                    // One column of a two-column max-w-6xl layout (~540px); without this
+                                    // the browser assumes full screen width and fetches the 3840px version
+                                    sizes="(min-width: 1152px) 540px, (min-width: 768px) 50vw, 100vw"
                                 />
-
-                                {stage.modalVideo && (
-                                    <div className="pointer-events-none absolute inset-0 flex items-end justify-end p-3">
-                                        <Button
-                                            size="sm"
-                                            className="cursor-pointer pointer-events-auto z-10 bg-black/60 text-white hover:bg-black/90"
-                                            onClick={() => {
-                                                setDialogVideoSrc(stage.modalVideo!);
-                                                setDialogTitle(stage.title);
-                                                setDialogOpen(true);
-                                            }}
-                                        >
-                                            A day in the life...
-                                        </Button>
-                                    </div>
-                                )}
                             </div>
                             <div className="p-6">
                                 <h3 className="mb-1 text-2xl font-semibold">
@@ -167,31 +143,6 @@ const Timeline = ({
                     ))}
                 </div>
             </div>
-            {/* Video Dialog */}
-            <Dialog open={dialogOpen} onOpenChange={(open) => {
-                setDialogOpen(open);
-                if (!open && dialogVideoRef.current) {
-                    dialogVideoRef.current.pause();
-                    dialogVideoRef.current.currentTime = 0;
-                }
-            }}>
-                <DialogContent className="sm:max-w-[800px]">
-                    <DialogHeader>
-                        <DialogTitle>A Day in the Life of an {dialogTitle}</DialogTitle>
-                    </DialogHeader>
-                    {dialogVideoSrc && (
-                        <video
-                            ref={dialogVideoRef}
-                            src={dialogVideoSrc}
-                            className="mt-2 w-full rounded-md"
-                            autoPlay
-                            playsInline
-                            preload="metadata"
-                            loop
-                        />
-                    )}
-                </DialogContent>
-            </Dialog>
         </div>
     );
 };

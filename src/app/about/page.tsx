@@ -1,11 +1,29 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
     title: "About — Alfonso Marquez",
-    description: "Full-stack developer and photographer of live music, toys and trading cards.",
+    description: "Full-stack developer focused on AI agents and automation, and a photographer and videographer of live music, TCGs and tech.",
 };
 
-const services = ["Web Development", "AI Integration", "Gig Photography", "Video & Editing"];
+// Grouped like the About row: development on the left, photo and video on the right
+const services = [
+    {
+        group: "Web & AI",
+        items: [
+            "Full-stack web apps",
+            "AI integration (OpenAI)",
+            "AI agents and agentic workflows",
+            "Agent orchestration and tool integration (MCP)",
+            "Workflow automation",
+        ],
+    },
+    {
+        group: "Photo & Video",
+        items: ["Gig photography", "Corporate event coverage", "Video & editing"],
+    },
+];
 
 const connect = [
     { label: "Instagram", href: "https://www.instagram.com/alfonsomrqz/" },
@@ -16,14 +34,8 @@ const connect = [
     { label: "Email", href: "mailto:marquez.josealfonso@gmail.com" },
 ];
 
-const gigs = [
-    { year: "2026", title: "20 Years of Wabi-Sabi", detail: "Street Kohi" },
-    { year: "2025", title: "NAPAKA MUSICK" },
-    { year: "2024", title: "The Maine, Back in Manila", detail: "Photos used on the band's official Instagram" },
-];
-
 const experience = [
-    { title: "Software Engineer", detail: "Full-stack development with C#, Laravel, React and AWS" },
+    { title: "Software Engineer", detail: "Full-stack development with C#, Laravel, Node.js, React and AWS" },
     { title: "Philippine Army", detail: "Special Enlist, Software Developer" },
 ];
 
@@ -55,39 +67,55 @@ export default function AboutPage() {
         <main className="container mx-auto px-4 pt-28 pb-24 lg:pt-36">
             <div className="grid gap-10 md:grid-cols-2 md:gap-8">
                 <h1 className="text-5xl font-semibold leading-[1.05] tracking-tight lg:text-7xl">Hello.</h1>
-                {/* Placeholder until the professional portrait is taken; the real one goes in grayscale */}
-                <div
-                    role="img"
-                    aria-label="Portrait coming soon"
-                    className="flex aspect-[3/2] w-full items-center justify-center bg-zinc-100 text-sm text-zinc-400"
-                >
-                    Portrait coming soon
-                </div>
+                {/* Tall 9:16 photo cropped to 4:5, kept head to toe (object position biased below centre) */}
+                <Image
+                    src="/images/about/portrait.jpg"
+                    alt="Alfonso Marquez walking between tiled walls, in black and white"
+                    width={1600}
+                    height={2845}
+                    priority
+                    sizes="(min-width: 768px) 50vw, 100vw"
+                    className="aspect-[4/5] w-full object-cover object-[50%_60%]"
+                />
             </div>
 
             <div className="mt-20 flex flex-col gap-16 lg:mt-28 lg:gap-20">
                 <Row label="About.">
                     <p className="text-2xl leading-snug tracking-tight text-zinc-950 lg:text-3xl">
-                        Full-stack developer with 5+ years of experience, now building AI-powered features. Also a photographer of live music, toys and trading cards.
+                        Full-stack developer with 6+ years of experience building web applications, now focused on AI agents and automation. Lately, I’ve been capturing moments through photos and video, drawn by my love of live music, TCGs and tech.
                     </p>
                     <div className="mt-10 grid gap-8 sm:grid-cols-2">
                         <div>
-                            <h3 className="text-sm font-semibold text-zinc-950">Development</h3>
+                            <h3 className="text-sm font-semibold text-zinc-950">
+                                {/* Plain underlined links to each portfolio */}
+                                <Link href="/" className="underline underline-offset-4 decoration-zinc-400 transition-colors hover:decoration-zinc-950">Development</Link>
+                            </h3>
                             <p className="mt-3 text-base leading-relaxed text-zinc-600">
-                                I build web applications end to end with C#, Laravel, React and AWS, and lately AI features on OpenAI and AWS Bedrock.
+                                I build full-stack web applications with C#, Laravel, Node.js, React and AWS, and integrate OpenAI-powered agents and automated workflows into the tools teams already use.
                             </p>
                         </div>
                         <div>
-                            <h3 className="text-sm font-semibold text-zinc-950">Photo & Video</h3>
+                            <h3 className="text-sm font-semibold text-zinc-950">
+                                <Link href="/media" className="underline underline-offset-4 decoration-zinc-400 transition-colors hover:decoration-zinc-950">Photo & Video</Link>
+                            </h3>
                             <p className="mt-3 text-base leading-relaxed text-zinc-600">
-                                I shoot live music, toys and trading cards, and edit short-form video for TikTok and Instagram. Always up for something new.
+                                I live for live music. A song really comes alive in a room full of people, and that’s the moment I try to catch. Off stage, I’m at the table playing Magic: The Gathering and other TCGs, shooting toys and cards, unboxing tech, and cutting short-form video for TikTok and Instagram. Always up for something new.
                             </p>
                         </div>
                     </div>
                 </Row>
 
                 <Row label="Services.">
-                    <p className="text-base leading-relaxed text-zinc-600">{services.join(", ")}</p>
+                    <div className="grid gap-8 sm:grid-cols-2">
+                        {services.map((service) => (
+                            <div key={service.group}>
+                                <h3 className="text-sm font-semibold text-zinc-950">{service.group}</h3>
+                                <ul className="mt-3 space-y-1 text-base leading-relaxed text-zinc-600">
+                                    {service.items.map((item) => <li key={item}>{item}</li>)}
+                                </ul>
+                            </div>
+                        ))}
+                    </div>
                 </Row>
 
                 <Row label="Connect.">
@@ -106,10 +134,6 @@ export default function AboutPage() {
                             </span>
                         ))}
                     </p>
-                </Row>
-
-                <Row label="Gigs.">
-                    <List items={gigs} />
                 </Row>
 
                 <Row label="Experience.">
