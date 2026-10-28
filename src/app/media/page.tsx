@@ -1,35 +1,20 @@
-import { Hero } from "@/components/hero";
 import { Button } from "@/components/ui/button";
 import InstagramIcon from "@/components/icons/instagramIcon";
 import TiktokIcon from "@/components/icons/tiktokIcon";
-import YoutubeIcon from "@/components/icons/youtubeIcon";
-import { ContactSection } from "@/components/contactSection";
+import Image from "next/image";
 import { MediaProjects } from "@/components/mediaProjects";
-import { mediaCategories } from "@/lib/data";
-
-const socials = [
-    { href: "https://www.instagram.com/alfonsomrqz/", label: "Instagram", icon: <InstagramIcon /> },
-    { href: "https://www.tiktok.com/@alfonsomrqz", label: "TikTok", icon: <TiktokIcon /> },
-    { href: "https://www.youtube.com/@alfonsomarquez2077", label: "YouTube", icon: <YoutubeIcon /> },
-];
+import { photoProjects } from "@/lib/data";
+import { ratioOf } from "@/lib/photoRatios";
 
 export default function MediaPage() {
     return (
         <div className="font-sans items-center justify-items-center pb-20 gap-16">
-            <Hero heading="Jose Alfonso Marquez" description="Photo & Video" tagline="Live music, trading card games and toys, on camera. Always up for something new." buttons={{
-                primary: {
-                    text: "Check It Out",
-                    url: "#projects",
-                },
-                secondary: {
-                    text: "Explore Dev Works",
-                    url: "/",
-                    target: "_blank",
-                }
-            }} />
-
-            <section id="projects">
-                <MediaProjects heading={"Photos"} description={"Live music."} categories={mediaCategories}></MediaProjects>
+            {/* Photos open the page; the heading is for screen readers and search only */}
+            <section id="projects" className="w-full pt-20 lg:pt-24">
+                <h1 className="sr-only">Photos by Alfonso Marquez</h1>
+                <MediaProjects
+                    projects={photoProjects.filter((p) => !p.hidden).map((p) => ({ ...p, ratio: p.coverRatio ?? ratioOf(p.cover) }))}
+                />
             </section>
 
             <section id="video" className="container flex flex-col items-center gap-6 px-8 py-16">
@@ -37,6 +22,28 @@ export default function MediaPage() {
                 <p className="text-center text-lg leading-relaxed text-muted-foreground lg:text-xl md:max-w-2xl">
                     Reels and gig clips, shot and edited by me. Watch them on my socials.
                 </p>
+                {/* "Let's fight somewhere empty" meme: the challenge, then the fight */}
+                <figure className="grid w-full max-w-3xl gap-3 sm:grid-cols-2">
+                    <Image
+                        src="/images/media/memes/lets-fight-somewhere-empty.jpg"
+                        alt="Goku and Vegeta from Dragon Ball Kai, captioned: Let's fight somewhere empty"
+                        width={800}
+                        height={450}
+                        sizes="(min-width: 768px) 384px, 100vw"
+                        className="h-auto w-full"
+                    />
+                    <div className="flex aspect-video items-center justify-center">
+                        <Image
+                            src="/images/media/memes/lets-fight-somewhere-empty-fight.png"
+                            alt="Goku and Vegeta trading punches"
+                            width={426}
+                            height={384}
+                            sizes="(min-width: 768px) 240px, 60vw"
+                            className="h-full w-auto"
+                        />
+                    </div>
+                    <figcaption className="sr-only">Meme: Goku and Vegeta agree to fight somewhere empty, then go at it.</figcaption>
+                </figure>
                 <div className="flex w-full flex-col justify-center gap-2 sm:w-auto sm:flex-row">
                     <Button asChild variant="outline" size="lg">
                         <a href="https://www.tiktok.com/@alfonsomrqz" target="_blank" rel="noopener noreferrer">
@@ -52,8 +59,6 @@ export default function MediaPage() {
                     </Button>
                 </div>
             </section>
-
-            <ContactSection socials={socials} />
         </div>
     );
 }

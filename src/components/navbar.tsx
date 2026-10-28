@@ -13,6 +13,9 @@ const activeStyle = "text-zinc-950 underline"
 export function NavigationMenuCustom() {
     const pathName = usePathname();
     const isDev = pathName === "/";
+    // Photo project pages (/media/<slug>) point their section links back at /media
+    const isPhotoProject = pathName.startsWith("/media/");
+    const media = isPhotoProject ? "/media" : "";
 
     // Section anchors on the two portfolio pages; page links on /about
     const links = pathName === "/about"
@@ -28,10 +31,10 @@ export function NavigationMenuCustom() {
                 { href: "#contact", label: "Contact" },
             ]
             : [
-                { href: "#projects", label: "Photos" },
-                { href: "#video", label: "Videos" },
+                { href: `${media}#projects`, label: "Photos" },
+                { href: `${media}#video`, label: "Videos" },
+                // No Contact here: the About page's Connect section covers it
                 { href: "/about", label: "About" },
-                { href: "#contact", label: "Contact" },
             ];
 
     const socials = isDev
@@ -47,8 +50,8 @@ export function NavigationMenuCustom() {
     return (
         <header className="fixed top-0 left-0 w-full z-50 bg-background/90 backdrop-blur-sm border-b border-border">
             <div className="max-w-7xl mx-auto px-4 h-14 flex justify-between items-center gap-4">
-                {/* Wordmark doubles as the home link: back to the top of the current page */}
-                <a href="#" className="text-[11px] sm:text-sm uppercase tracking-[0.15em] sm:tracking-[0.25em] text-zinc-950 whitespace-nowrap">
+                {/* Wordmark doubles as the home link: top of the current page, or /media from a photo project */}
+                <a href={isPhotoProject ? "/media" : "#"} className="text-[11px] sm:text-sm uppercase tracking-[0.15em] sm:tracking-[0.25em] text-zinc-950 whitespace-nowrap">
                     Alfonso Marquez
                 </a>
                 <nav className="flex items-center gap-3 sm:gap-6">

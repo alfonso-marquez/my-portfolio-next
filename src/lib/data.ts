@@ -1,274 +1,150 @@
-// Photo gallery data used by the MediaProjects component.
-// One tab per gig. `name` is the short tab label, `title` is the heading shown above the photos.
-// Single-act gigs use `images`; multi-act gigs use `sets`, one section per artist.
-// `note` is an optional line under the gig heading, e.g. a credit.
-// Gigs with no images show a "coming soon" note.
-export const mediaCategories = [
+// Photo projects shown on /media. Each one gets a cover tile on /media and its own page at
+// /media/<slug> with every photo. `cover` is the tile image; `hidden` keeps a project in the
+// data without listing it or building its page.
+export type PhotoProject = {
+  slug: string;
+  title: string;
+  gig: string;
+  date?: string;
+  venue?: string;
+  note?: string; // one line under the heading, e.g. a credit
+  hidden?: boolean;
+  cover: string;
+  coverRatio?: number; // crops the /media tile to this width / height, e.g. for very tall photos
+  images: { image: string; description?: string; device?: string; full?: boolean }[]; // full: own row, full width
+};
+
+export const photoProjects: PhotoProject[] = [
   {
-    name: "The Maine Manila '24",
-    value: "the-maine",
-    title: "The Maine - Back in Manila",
-    date: "September 2024",
-    note: "Used by The Maine on their official Instagram",
+    slug: "the-maine",
+    title: "The Maine",
+    gig: "Back in Manila '24",
+    cover: "/images/media/concerts/IMG_4797.JPEG",
+    coverRatio: 4 / 5,
     images: [
-      {
-        description: "John posted these photos on his Instagram.",
-        device: "Shot on iPhone 15 Pro Max",
-        image: "/images/media/concerts/IMG_4065.JPEG",
-      },
-      {
-        description: "John posted these photos on his Instagram.",
-        device: "Shot on iPhone 15 Pro Max",
-        image: "/images/media/concerts/IMG_4797.JPEG",
-      },
-      {
-        description: "Band used this photo for their Instagram post.",
-        device: "Shot on iPhone 15 Pro Max",
-        image: "/images/media/concerts/IMG_4689.JPEG",
-      },
-      {
-        description: "John posted these photos on his Instagram.",
-        device: "Shot on iPhone 15 Pro Max",
-        image: "/images/media/concerts/IMG_4793.JPEG",
-      },
-      {
-        description: "",
-        device: "Shot on iPhone 15 Pro Max",
-        image: "/images/media/concerts/IMG_4054.JPEG",
-      },
-      {
-        description: "",
-        device: "Shot on iPhone 15 Pro Max",
-        image: "/images/media/concerts/IMG_4454.JPEG",
-      },
+      { image: "/images/media/concerts/IMG_4797.JPEG", description: "John posted these photos on his Instagram.", device: "Shot on iPhone 15 Pro Max" },
+      { image: "/images/media/concerts/IMG_4065.JPEG", description: "John posted these photos on his Instagram.", device: "Shot on iPhone 15 Pro Max" },
+      { image: "/images/media/concerts/IMG_4689.JPEG", description: "Band used this photo for their Instagram post.", device: "Shot on iPhone 15 Pro Max" },
+      { image: "/images/media/concerts/IMG_4793.JPEG", description: "John posted these photos on his Instagram.", device: "Shot on iPhone 15 Pro Max" },
+      { image: "/images/media/concerts/IMG_4054.JPEG", device: "Shot on iPhone 15 Pro Max" },
+      { image: "/images/media/concerts/IMG_4454.JPEG", device: "Shot on iPhone 15 Pro Max" },
     ],
   },
   {
-    name: "NAPAKA MUSICK",
-    value: "napaka-musick",
-    title: "NAPAKA MUSICK",
-    date: "November 23, 2025",
-    sets: [
-      {
-        name: "badwave",
-        images: [
-          {
-            description: "",
-            device: "",
-            image: "/images/media/napaka-musick/badwave-1.jpg",
-          },
-          {
-            description: "",
-            device: "",
-            image: "/images/media/napaka-musick/badwave-2.jpg",
-          },
-          {
-            description: "",
-            device: "",
-            image: "/images/media/napaka-musick/badwave-3.jpg",
-          },
-          {
-            description: "",
-            device: "",
-            image: "/images/media/napaka-musick/badwave-4.jpg",
-          },
-          {
-            description: "",
-            device: "",
-            image: "/images/media/napaka-musick/badwave-5.jpg",
-          },
-        ],
-      },
-      {
-        name: "Brickcity",
-        images: [
-          {
-            description: "",
-            device: "",
-            image: "/images/media/napaka-musick/brickcity-1.jpg",
-          },
-          {
-            description: "",
-            device: "",
-            image: "/images/media/napaka-musick/brickcity-2.jpg",
-          },
-          {
-            description: "",
-            device: "",
-            image: "/images/media/napaka-musick/brickcity-3.jpg",
-          },
-          {
-            description: "",
-            device: "",
-            image: "/images/media/napaka-musick/brickcity-4.jpg",
-          },
-        ],
-      },
-      {
-        name: "daintsu",
-        images: [
-          {
-            description: "",
-            device: "",
-            image: "/images/media/napaka-musick/daintsu-1.jpg",
-          },
-          {
-            description: "",
-            device: "",
-            image: "/images/media/napaka-musick/daintsu-2.jpg",
-          },
-          {
-            description: "",
-            device: "",
-            image: "/images/media/napaka-musick/daintsu-3.jpg",
-          },
-          {
-            description: "",
-            device: "",
-            image: "/images/media/napaka-musick/daintsu-4.jpg",
-          },
-          {
-            description: "",
-            device: "",
-            image: "/images/media/napaka-musick/daintsu-5.jpg",
-          },
-        ],
-      },
-    ],
-  },
-  {
-    name: "20 Years of Wabi-Sabi",
-    value: "wabi-sabi-20-years",
-    title: "20 Years of Wabi-Sabi",
+    slug: "johnoy-danao",
+    title: "Johnoy Danao",
+    gig: "20 Years of Wabi-Sabi",
     date: "October 23, 2026",
     venue: "Street Kohi",
-    sets: [
-      {
-        name: "Johnoy Danao",
-        images: [
-          {
-            description: "",
-            device: "",
-            image: "/images/media/wabi-sabi/johnoy-1.jpg",
-          },
-          {
-            description: "",
-            device: "",
-            image: "/images/media/wabi-sabi/johnoy-2.jpg",
-          },
-          {
-            description: "",
-            device: "",
-            image: "/images/media/wabi-sabi/johnoy-3.jpg",
-          },
-          {
-            description: "",
-            device: "",
-            image: "/images/media/wabi-sabi/johnoy-4.jpg",
-          },
-          {
-            description: "",
-            device: "",
-            image: "/images/media/wabi-sabi/johnoy-5.jpg",
-          },
-          {
-            description: "",
-            device: "",
-            image: "/images/media/wabi-sabi/johnoy-6.jpg",
-          },
-        ],
-      },
-      {
-        name: "Reese Lansangan",
-        images: [
-          {
-            description: "",
-            device: "",
-            image: "/images/media/wabi-sabi/reese-1.jpg",
-          },
-          {
-            description: "",
-            device: "",
-            image: "/images/media/wabi-sabi/reese-2.jpg",
-          },
-          {
-            description: "",
-            device: "",
-            image: "/images/media/wabi-sabi/reese-3.jpg",
-          },
-          {
-            description: "",
-            device: "",
-            image: "/images/media/wabi-sabi/reese-4.jpg",
-          },
-          {
-            description: "",
-            device: "",
-            image: "/images/media/wabi-sabi/reese-5.jpg",
-          },
-          {
-            description: "",
-            device: "",
-            image: "/images/media/wabi-sabi/reese-6.jpg",
-          },
-          {
-            description: "",
-            device: "",
-            image: "/images/media/wabi-sabi/reese-crowd.jpg",
-            wide: true,
-          },
-        ],
-      },
-      {
-        name: "totâ",
-        images: [
-          {
-            description: "",
-            device: "",
-            image: "/images/media/wabi-sabi/tota-1.jpg",
-          },
-          {
-            description: "",
-            device: "",
-            image: "/images/media/wabi-sabi/tota-2.jpg",
-          },
-          {
-            description: "",
-            device: "",
-            image: "/images/media/wabi-sabi/tota-3.jpg",
-          },
-          {
-            description: "",
-            device: "",
-            image: "/images/media/wabi-sabi/tota-4.jpg",
-          },
-        ],
-      },
-      {
-        name: "Maya's Anklet",
-        images: [
-          {
-            description: "",
-            device: "",
-            image: "/images/media/wabi-sabi/maya-1.jpg",
-          },
-          {
-            description: "",
-            device: "",
-            image: "/images/media/wabi-sabi/maya-2.jpg",
-          },
-          {
-            description: "",
-            device: "",
-            image: "/images/media/wabi-sabi/maya-3.jpg",
-          },
-          {
-            description: "",
-            device: "",
-            image: "/images/media/wabi-sabi/maya-5.jpg",
-          },
-        ],
-      },
+    cover: "/images/media/wabi-sabi/johnoy-09.jpg",
+    images: [
+      { image: "/images/media/wabi-sabi/johnoy-09.jpg" },
+      { image: "/images/media/wabi-sabi/johnoy-02.jpg" },
+      { image: "/images/media/wabi-sabi/johnoy-05.jpg" },
+      { image: "/images/media/wabi-sabi/johnoy-06.jpg" },
+      { image: "/images/media/wabi-sabi/johnoy-07.jpg" },
+      { image: "/images/media/wabi-sabi/johnoy-08.jpg" },
+      { image: "/images/media/wabi-sabi/johnoy-01.jpg" },
+      { image: "/images/media/wabi-sabi/johnoy-10.jpg" },
+      { image: "/images/media/wabi-sabi/johnoy-11.jpg" },
+    ],
+  },
+  {
+    slug: "reese-lansangan",
+    title: "Reese Lansangan",
+    gig: "20 Years of Wabi-Sabi",
+    date: "October 23, 2026",
+    venue: "Street Kohi",
+    cover: "/images/media/wabi-sabi/reese-03.jpg",
+    images: [
+      { image: "/images/media/wabi-sabi/reese-03.jpg" },
+      { image: "/images/media/wabi-sabi/reese-01.jpg" },
+      { image: "/images/media/wabi-sabi/reese-02.jpg" },
+      { image: "/images/media/wabi-sabi/reese-04.jpg" },
+      { image: "/images/media/wabi-sabi/reese-05.jpg" },
+      { image: "/images/media/wabi-sabi/reese-07.jpg" },
+      { image: "/images/media/wabi-sabi/reese-08.jpg" },
+      { image: "/images/media/wabi-sabi/reese-09.jpg" },
+      { image: "/images/media/wabi-sabi/reese-10.jpg" },
+      { image: "/images/media/wabi-sabi/reese-11.jpg" },
+      { image: "/images/media/wabi-sabi/reese-12.jpg" },
+      { image: "/images/media/wabi-sabi/reese-13.jpg" },
+      { image: "/images/media/wabi-sabi/reese-14.jpg" },
+    ],
+  },
+  {
+    slug: "tota",
+    title: "totâ",
+    gig: "20 Years of Wabi-Sabi",
+    date: "October 23, 2026",
+    venue: "Street Kohi",
+    cover: "/images/media/wabi-sabi/tota-02.jpg",
+    images: [
+      { image: "/images/media/wabi-sabi/tota-02.jpg" },
+      { image: "/images/media/wabi-sabi/tota-01.jpg" },
+      { image: "/images/media/wabi-sabi/tota-04.jpg" },
+      { image: "/images/media/wabi-sabi/tota-05.jpg" },
+      { image: "/images/media/wabi-sabi/tota-07.jpg" },
+      { image: "/images/media/wabi-sabi/tota-08.jpg" },
+      { image: "/images/media/wabi-sabi/tota-09.jpg" },
+      { image: "/images/media/wabi-sabi/tota-10.jpg" },
+    ],
+  },
+  {
+    slug: "mayas-anklet",
+    title: "Maya's Anklet",
+    gig: "20 Years of Wabi-Sabi",
+    date: "October 23, 2026",
+    venue: "Street Kohi",
+    cover: "/images/media/wabi-sabi/maya-04.jpg",
+    images: [
+      { image: "/images/media/wabi-sabi/maya-04.jpg" },
+      { image: "/images/media/wabi-sabi/maya-01.jpg" },
+      { image: "/images/media/wabi-sabi/maya-02.jpg" },
+      { image: "/images/media/wabi-sabi/maya-05.jpg" },
+      { image: "/images/media/wabi-sabi/maya-dsc06249.jpg" },
+    ],
+  },
+  {
+    slug: "badwave",
+    title: "badwave",
+    gig: "NAPAKA MUSICK",
+    date: "November 23, 2025",
+    cover: "/images/media/napaka-musick/badwave-dsc08583.jpg",
+    images: [
+      { image: "/images/media/napaka-musick/badwave-dsc08583.jpg" },
+      { image: "/images/media/napaka-musick/badwave-dsc08486.jpg", full: true },
+      { image: "/images/media/napaka-musick/badwave-3.jpg" },
+      { image: "/images/media/napaka-musick/badwave-4.jpg" },
+      { image: "/images/media/napaka-musick/badwave-5.jpg" },
+    ],
+  },
+  {
+    slug: "brickcity",
+    title: "Brickcity",
+    gig: "NAPAKA MUSICK",
+    date: "November 23, 2025",
+    cover: "/images/media/napaka-musick/brickcity-3.jpg",
+    images: [
+      { image: "/images/media/napaka-musick/brickcity-3.jpg" },
+      { image: "/images/media/napaka-musick/brickcity-1.jpg" },
+      { image: "/images/media/napaka-musick/brickcity-2.jpg" },
+      { image: "/images/media/napaka-musick/brickcity-4.jpg" },
+    ],
+  },
+  {
+    slug: "daintsu",
+    title: "daintsu",
+    gig: "NAPAKA MUSICK",
+    date: "November 23, 2025",
+    cover: "/images/media/napaka-musick/daintsu-dsc07959.jpg",
+    images: [
+      { image: "/images/media/napaka-musick/daintsu-dsc07959.jpg" },
+      { image: "/images/media/napaka-musick/daintsu-dsc07983.jpg" },
+      { image: "/images/media/napaka-musick/daintsu-dsc07954.jpg" },
+      { image: "/images/media/napaka-musick/daintsu-dsc07968.jpg" },
+      { image: "/images/media/napaka-musick/daintsu-dsc08085.jpg" },
+      { image: "/images/media/napaka-musick/daintsu-dsc08088.jpg" },
     ],
   },
 ];
