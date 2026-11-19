@@ -13,14 +13,15 @@ const description = "Gig photography and live videos by Alfonso Marquez.";
 export const metadata: Metadata = {
     title,
     description,
-    // Link preview image comes from scripts/og-images.mjs (first project's cover)
+    // Link preview uses the site-wide portrait (src/app/opengraph-image.jpg); only artist
+    // pages get their own cover. Named here because a page's openGraph replaces the inherited one.
     openGraph: {
         title,
         description,
         url: "/media",
         siteName: "Alfonso Marquez",
         type: "website",
-        images: [{ url: "/og/media.jpg", width: 1200, height: 630, alt: "Live gig photo by Alfonso Marquez" }],
+        images: [{ url: "/opengraph-image.jpg", width: 1200, height: 630, alt: "Alfonso Marquez walking between tiled walls, in black and white" }],
     },
 };
 

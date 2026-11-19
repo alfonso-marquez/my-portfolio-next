@@ -1,5 +1,6 @@
-// Builds the 1200x630 link-preview images (Instagram, WhatsApp, etc.) for /media and each
-// photo project, from the project covers in src/lib/data.ts. Re-run after adding a project:
+// Builds the 1200x630 link-preview images (Instagram, WhatsApp, etc.) for each artist page
+// (/media/<slug>), from the project covers in src/lib/data.ts. Every other page uses the
+// portrait in src/app/opengraph-image.jpg. Re-run after adding a project:
 //   node scripts/og-images.mjs
 // sharp ships with Next.js, so no extra install is needed.
 import fs from "fs";
@@ -39,7 +40,3 @@ for (const { slug, cover } of projects) {
     await render(cover, slug);
     console.log(`og/${slug}.jpg  <- ${cover}`);
 }
-
-// /media uses the first project's cover
-await render(projects[0].cover, "media");
-console.log(`og/media.jpg  <- ${projects[0].cover}`);
