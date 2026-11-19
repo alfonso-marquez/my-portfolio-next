@@ -2,9 +2,22 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 
+const title = "About — Alfonso Marquez";
+const description = "Full-stack developer focused on AI agents and automation, and a photographer and videographer of live music, TCGs and tech.";
+
+// Link preview reuses the portrait from src/app/opengraph-image.jpg; it has to be named here
+// because a page's own openGraph replaces the inherited one, image included
 export const metadata: Metadata = {
-    title: "About — Alfonso Marquez",
-    description: "Full-stack developer focused on AI agents and automation, and a photographer and videographer of live music, TCGs and tech.",
+    title,
+    description,
+    openGraph: {
+        title,
+        description,
+        url: "/about",
+        siteName: "Alfonso Marquez",
+        type: "website",
+        images: [{ url: "/opengraph-image.jpg", width: 1200, height: 630, alt: "Alfonso Marquez walking between tiled walls, in black and white" }],
+    },
 };
 
 // Grouped like the About row: development on the left, photo and video on the right

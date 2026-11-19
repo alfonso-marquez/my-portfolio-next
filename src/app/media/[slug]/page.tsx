@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import fs from "fs";
+import path from "path";
 import { ArrowLeft } from "lucide-react";
 import { PhotoGallery } from "@/components/photoGallery";
 import { photoProjects } from "@/lib/data";
@@ -18,9 +20,27 @@ type Props = { params: Promise<{ slug: string }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { slug } = await params;
     const project = visible.find((p) => p.slug === slug);
-    return project
-        ? { title: `${project.title} — Alfonso Marquez`, description: `${project.title}, ${project.gig}. Photos by Alfonso Marquez.` }
-        : {};
+    if (!project) return {};
+
+    const title = `${project.title} — Alfonso Marquez`;
+    const description = `${project.title}, ${project.gig}. Photos by Alfonso Marquez.`;
+    // Link preview: the 1200x630 crop from scripts/og-images.mjs, else the raw cover
+    const og = `/og/${project.slug}.jpg`;
+    const hasOg = fs.existsSync(path.join(process.cwd(), "public", og));
+    return {
+        title,
+        description,
+        openGraph: {
+            title,
+            description,
+            url: `/media/${project.slug}`,
+            siteName: "Alfonso Marquez",
+            type: "website",
+            images: [hasOg
+                ? { url: og, width: 1200, height: 630, alt: `${project.title} live, photographed by Alfonso Marquez` }
+                : { url: project.cover, alt: `${project.title} live, photographed by Alfonso Marquez` }],
+        },
+    };
 }
 
 export default async function PhotoProjectPage({ params }: Props) {

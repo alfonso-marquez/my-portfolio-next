@@ -17,8 +17,18 @@ const instrumentSerif = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
+  // Makes the auto-generated og:image URL absolute (required by Instagram, WhatsApp, etc.)
+  metadataBase: new URL("https://alfonso-marquez-portfolio.vercel.app"),
   title: "Alfonso Marquez",
   description: "Portfolio",
+  // Link previews; the image comes from src/app/opengraph-image.jpg
+  openGraph: {
+    title: "Alfonso Marquez",
+    description: "Full-stack developer, photographer and videographer.",
+    url: "/",
+    siteName: "Alfonso Marquez",
+    type: "website",
+  },
   icons: {
     icon: [
       { url: '/favicon.ico' },

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Button } from "@/components/ui/button";
 import InstagramIcon from "@/components/icons/instagramIcon";
 import TiktokIcon from "@/components/icons/tiktokIcon";
@@ -5,6 +6,23 @@ import Image from "next/image";
 import { MediaProjects } from "@/components/mediaProjects";
 import { photoProjects } from "@/lib/data";
 import { ratioOf } from "@/lib/photoRatios";
+
+const title = "Photos & Videos — Alfonso Marquez";
+const description = "Gig photography and live videos by Alfonso Marquez.";
+
+export const metadata: Metadata = {
+    title,
+    description,
+    // Link preview image comes from scripts/og-images.mjs (first project's cover)
+    openGraph: {
+        title,
+        description,
+        url: "/media",
+        siteName: "Alfonso Marquez",
+        type: "website",
+        images: [{ url: "/og/media.jpg", width: 1200, height: 630, alt: "Live gig photo by Alfonso Marquez" }],
+    },
+};
 
 // YouTube embeds in the Videos section, in display order. `id` is the part after /embed/.
 // Empty the list and the section shows the "Let's fight somewhere empty" meme instead.
