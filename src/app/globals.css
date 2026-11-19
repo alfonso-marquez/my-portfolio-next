@@ -98,7 +98,7 @@ html {
   width: 100%;
   text-wrap: nowrap;
   overflow: hidden;
-  animation: typing 2s steps(30) infinite alternate-reverse;
+  animation: typing 1.5s steps(30) both;
 }
 @keyframes typing {
   from { width: 0 }

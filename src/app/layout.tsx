@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import { ConditionalLayout } from "@/components/conditionalLayout";
+import { siteUrl } from "@/lib/site";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -18,13 +19,14 @@ const instrumentSerif = Instrument_Serif({
 
 export const metadata: Metadata = {
   // Makes the auto-generated og:image URL absolute (required by Instagram, WhatsApp, etc.)
-  metadataBase: new URL("https://alfonso-marquez-portfolio.vercel.app"),
-  title: "Alfonso Marquez",
-  description: "Portfolio",
+  metadataBase: new URL(siteUrl),
+  title: "Alfonso Marquez — Full-stack Developer & Concert Photographer",
+  description:
+    "Alfonso Marquez is a full-stack developer building AI into web apps with React, Next.js and PostgreSQL, and a gig and concert photographer based in the Philippines.",
   // Link previews; the image comes from src/app/opengraph-image.jpg
   openGraph: {
-    title: "Alfonso Marquez",
-    description: "Full-stack developer, photographer and videographer.",
+    title: "Alfonso Marquez — Full-stack Developer & Concert Photographer",
+    description: "Full-stack developer building AI into web apps, and a gig and concert photographer in the Philippines.",
     url: "/",
     siteName: "Alfonso Marquez",
     type: "website",

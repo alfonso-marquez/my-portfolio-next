@@ -6,6 +6,13 @@ import InstagramIcon from "@/components/icons/instagramIcon";
 import LinkedinIcon from "@/components/icons/linkedinIcon";
 import YoutubeIcon from "@/components/icons/youtubeIcon";
 import { ContactSection } from "@/components/contactSection";
+import type { Metadata } from "next";
+
+// Title and description come from the root layout; only the canonical URL is home-specific
+// (set here, not in the layout, so other pages don't inherit "/" as their canonical)
+export const metadata: Metadata = {
+    alternates: { canonical: "/" },
+};
 
 const socials = [
     { href: "https://github.com/alfonso-marquez", label: "GitHub", icon: <GithubIcon /> },
@@ -20,7 +27,7 @@ export default function Home() {
             <Hero heading="Jose Alfonso Marquez" description="Software Engineer" />
             <section id="about" className="w-full bg-gradient-to-br from-primary/8 via-secondary/8 to-accent/8 px-8">
                 <div className="flex items-center justify-center">
-                    <Timeline badge="Work in progress" heading={"About Me"} buttons={{
+                    <Timeline heading={"About Me"} buttons={{
                         primary: {
                             text: "View Projects",
                             url: "#projects"
@@ -33,7 +40,7 @@ export default function Home() {
                 </div>
             </section>
             <section id="projects">
-                <DevProjects badge="Work in progress" heading={"Development Projects"}></DevProjects>
+                <DevProjects heading={"Development Projects"} />
             </section>
 
             <ContactSection socials={socials} />

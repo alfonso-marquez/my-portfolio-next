@@ -3,6 +3,8 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import { useEffect, useState, useRef } from "react";
 
 interface TimelineProps {
@@ -18,10 +20,11 @@ interface TimelineProps {
         title: string;
         description: string;
         sidebarDescription?: string; // Dynamic description for sticky sidebar
+        link?: { text: string; url: string }; // Optional link under the description
     }>;
 }
 
-const initialDescription = "Full-stack developer with 6+ years of experience building web applications, now focused on AI agents and automation.";
+const initialDescription = "Full-stack developer with 6+ years of experience, now building AI into web apps.";
 
 
 const Timeline = ({
@@ -43,19 +46,20 @@ const Timeline = ({
             image: "/images/about/software-engineer.jpg",
             title: "Software Engineer",
             description:
-                "I build full-stack web applications with C#, Laravel, Node.js, React and AWS, and integrate OpenAI-powered agents and automated workflows into the tools teams already use.",
+                "My recent work is in React, Next.js and PostgreSQL, and I’ve also built with C#, Laravel, Node.js and AWS. Lately I’ve been adding AI to the apps I build, using OpenAI for features and to automate the repetitive parts of a team’s work.",
             sidebarDescription: initialDescription
         },
         {
             image: "/images/about/army.jpg",
             title: "Enlisted Personnel",
-            description: "Contributed to the modernization of military systems through software solutions.",
+            description: "Contributed to the modernization of internal military processes through software solutions.",
             sidebarDescription: "Served as a Special Enlist (Software Developer) in the Philippine Army.",
         },
         {
             image: "/images/about/photographer.jpg",
             title: "Photographer / Videographer",
-            description: "To see the world, things dangerous to come to, to see behind walls, to draw closer, to find each other and to feel. That is the Purpose of Life. - Secret Life of Walter Mitty",
+            description: "“Every photograph is accurate, and none of them is the truth.” — Richard Avedon",
+            link: { text: "See my photos and videos", url: "/media" },
             sidebarDescription: "Lately, I’ve been capturing moments through photos and video, drawn by my love of live music, TCGs and tech."
         },
     ],
@@ -131,6 +135,8 @@ const Timeline = ({
                                     // One column of a two-column max-w-6xl layout (~540px); without this
                                     // the browser assumes full screen width and fetches the 3840px version
                                     sizes="(min-width: 1152px) 540px, (min-width: 768px) 50vw, 100vw"
+                                    // The first photo is visible on load (the page's LCP image)
+                                    priority={index === 0}
                                 />
                             </div>
                             <div className="p-6">
@@ -138,6 +144,15 @@ const Timeline = ({
                                     {stage.title}
                                 </h3>
                                 <p className="text-muted-foreground">{stage.description}</p>
+                                {stage.link && (
+                                    <Link
+                                        href={stage.link.url}
+                                        className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium underline-offset-4 hover:underline"
+                                    >
+                                        {stage.link.text}
+                                        <ArrowRight className="size-4" />
+                                    </Link>
+                                )}
                             </div>
                         </div>
                     ))}

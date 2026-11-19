@@ -8,7 +8,7 @@ import { photoProjects } from "@/lib/data";
 import { ratioOf } from "@/lib/photoRatios";
 
 const title = "Photos & Videos — Alfonso Marquez";
-const description = "Gig photography and live videos by Alfonso Marquez.";
+const description = "Concert and gig photography and live videos by Alfonso Marquez, based in the Philippines.";
 
 export const metadata: Metadata = {
     title,

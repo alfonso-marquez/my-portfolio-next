@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import { siteUrl, socialProfiles } from "@/lib/site";
 
-const title = "About — Alfonso Marquez";
-const description = "Full-stack developer focused on AI agents and automation, and a photographer and videographer of live music, TCGs and tech.";
+const title = "About Alfonso Marquez — Developer & Concert Photographer";
+const description = "Alfonso Marquez is a full-stack developer building AI into web apps, and a gig and concert photographer based in the Philippines.";
 
 // Link preview reuses the portrait from src/app/opengraph-image.jpg; it has to be named here
 // because a page's own openGraph replaces the inherited one, image included
 export const metadata: Metadata = {
     title,
     description,
+    alternates: { canonical: "/about" },
     openGraph: {
         title,
         description,
@@ -34,7 +36,7 @@ const services = [
     },
     {
         group: "Photo & Video",
-        items: ["Gig photography", "Corporate event coverage", "Video & editing"],
+        items: ["Concert & gig photography", "Corporate event coverage", "Video & editing"],
     },
 ];
 
@@ -75,11 +77,37 @@ const List = ({ items }: { items: { year?: string, title: string, detail?: strin
     </ul>
 );
 
+// Structured data so search engines know who this page is about (name searches, profile links)
+const person = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Jose Alfonso Marquez",
+    alternateName: "Alfonso Marquez",
+    url: `${siteUrl}/about`,
+    image: `${siteUrl}/images/about/portrait.jpg`,
+    jobTitle: "Full-stack Developer",
+    description,
+    address: { "@type": "PostalAddress", addressCountry: "PH" },
+    knowsAbout: [
+        "React", "Next.js", "PostgreSQL", "C#", "Laravel", "Node.js", "AWS", "OpenAI",
+        "Concert photography", "Videography",
+    ],
+    sameAs: socialProfiles,
+};
+
 export default function AboutPage() {
     return (
         <main className="container mx-auto px-4 pt-28 pb-24 lg:pt-36">
+            <script
+                type="application/ld+json"
+                // Escape "<" so the JSON can't close the script tag
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(person).replace(/</g, "\\u003c") }}
+            />
             <div className="grid gap-10 md:grid-cols-2 md:gap-8">
-                <h1 className="text-5xl font-semibold leading-[1.05] tracking-tight lg:text-7xl">Hello.</h1>
+                {/* Reads "Hello." on screen; screen readers and search engines also get the name */}
+                <h1 className="text-5xl font-semibold leading-[1.05] tracking-tight lg:text-7xl">
+                    Hello.<span className="sr-only"> I’m Alfonso Marquez.</span>
+                </h1>
                 {/* Tall 9:16 photo cropped to 4:5, kept head to toe (object position biased below centre) */}
                 <Image
                     src="/images/about/portrait.jpg"
@@ -95,7 +123,7 @@ export default function AboutPage() {
             <div className="mt-20 flex flex-col gap-16 lg:mt-28 lg:gap-20">
                 <Row label="About.">
                     <p className="text-2xl leading-snug tracking-tight text-zinc-950 lg:text-3xl">
-                        Full-stack developer with 6+ years of experience building web applications, now focused on AI agents and automation. Lately, I’ve been capturing moments through photos and video, drawn by my love of live music, TCGs and tech.
+                        I’m a full-stack developer with 6+ years of experience, now building AI into web apps. Outside of work, I’m usually at a gig with a camera or at a table with my pod playing Magic (or soon, possibly Riftbound).
                     </p>
                     <div className="mt-10 grid gap-8 sm:grid-cols-2">
                         <div>
@@ -104,7 +132,7 @@ export default function AboutPage() {
                                 <Link href="/" className="underline underline-offset-4 decoration-zinc-400 transition-colors hover:decoration-zinc-950">Development</Link>
                             </h3>
                             <p className="mt-3 text-base leading-relaxed text-zinc-600">
-                                I build full-stack web applications with C#, Laravel, Node.js, React and AWS, and integrate OpenAI-powered agents and automated workflows into the tools teams already use.
+                                My recent work is in React, Next.js and PostgreSQL, and I’ve also built with C#, Laravel, Node.js and AWS. Lately I’ve been adding AI to the apps I build, using OpenAI for features and to automate the repetitive parts of a team’s work.
                             </p>
                         </div>
                         <div>
@@ -112,7 +140,7 @@ export default function AboutPage() {
                                 <Link href="/media" className="underline underline-offset-4 decoration-zinc-400 transition-colors hover:decoration-zinc-950">Photo & Video</Link>
                             </h3>
                             <p className="mt-3 text-base leading-relaxed text-zinc-600">
-                                I live for live music. A song really comes alive in a room full of people, and that’s the moment I try to catch. Off stage, I’m at the table playing Magic: The Gathering and other TCGs, shooting toys and cards, unboxing tech, and cutting short-form video for TikTok and Instagram. Always up for something new.
+                                I mostly do concert and gig photography. I like being close to the stage and catching the moment the crowd gets into it. When I’m not at a gig, I’m playing Magic: The Gathering, shooting toys and cards, unboxing tech, or editing short videos for TikTok and Instagram.
                             </p>
                         </div>
                     </div>

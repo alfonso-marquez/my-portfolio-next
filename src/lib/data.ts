@@ -11,6 +11,7 @@ export type PhotoProject = {
   hidden?: boolean;
   cover: string;
   coverRatio?: number; // crops the /media tile to this width / height, e.g. for very tall photos
+  coverRow?: string; // consecutive projects with the same key share one /media row (tablet and desktop)
   images: { image: string; description?: string; device?: string; full?: boolean }[]; // full: own row, full width
 };
 
@@ -225,7 +226,8 @@ export const photoProjects: PhotoProject[] = [
     title: "badwave",
     gig: "NAPAKA MUSICK",
     date: "November 23, 2025",
-    cover: "/images/media/napaka-musick/badwave-dsc08583.jpg",
+    cover: "/images/media/napaka-musick/badwave-dsc08486.jpg",
+    coverRow: "badwave-brickcity",
     images: [
       { image: "/images/media/napaka-musick/badwave-dsc08583.jpg" },
       { image: "/images/media/napaka-musick/badwave-dsc08486.jpg", full: true },
@@ -240,6 +242,7 @@ export const photoProjects: PhotoProject[] = [
     gig: "NAPAKA MUSICK",
     date: "November 23, 2025",
     cover: "/images/media/napaka-musick/brickcity-3.jpg",
+    coverRow: "badwave-brickcity",
     images: [
       { image: "/images/media/napaka-musick/brickcity-3.jpg" },
       { image: "/images/media/napaka-musick/brickcity-1.jpg" },
@@ -290,6 +293,7 @@ export type DevProject = {
   title: string;
   description: string;
   image: string;
+  secondImage?: string; // Optional second screenshot, stacked under `image` at the same size
   status: DevProjectStatus;
   siteUrl?: string; // Live site if deployed
   repoUrl?: string; // GitHub repo as fallback or reference
@@ -300,8 +304,9 @@ export const devProjects: DevProject[] = [
   {
     title: "My Portfolio",
     description:
-      "Work in Progress. This is my personal portfolio website showcasing my projects and skills.",
+      "My personal portfolio website showcasing my projects and skills.",
     image: "/images/projects/portfolio-screenshot.png",
+    secondImage: "/images/projects/portfolio-media-screenshot.jpg",
     status: "deployed",
     siteUrl: "https://alfonso-marquez-portfolio.vercel.app",
     repoUrl: "https://github.com/alfonso-marquez/my-portfolio-next",
@@ -312,7 +317,6 @@ export const devProjects: DevProject[] = [
     description: "Collaborative Library for Photo Enthusiasts.",
     image: "/images/projects/photo-library-screenshot.png",
     status: "deployed",
-    siteUrl: "/",
     repoUrl: "https://github.com/alfonso-marquez/go-rocky-exam",
     tech: [
       "Next.js",
@@ -344,14 +348,6 @@ export const devProjects: DevProject[] = [
       "AI",
       "OpenAI",
     ],
-  },
-  {
-    title: "Custom CRM",
-    description: "Under development. So here is my cat in the meantime.",
-    image: "/images/projects/crm-placeholder-cat.jpg",
-    status: "planned",
-    repoUrl: "https://github.com/alfonso-marquez",
-    tech: ["TBD"],
   },
 ];
 

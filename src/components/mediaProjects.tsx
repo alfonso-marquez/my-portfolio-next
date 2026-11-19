@@ -6,6 +6,7 @@ interface ProjectCover {
     gig: string
     cover: string
     ratio?: number
+    coverRow?: string
 }
 
 // One cover photo per project, each linking to that project's page with all of its photos
@@ -17,6 +18,7 @@ const MediaProjects = ({ projects }: { projects: ProjectCover[] }) => (
             photos={projects.map((project) => ({
                 image: project.cover,
                 ratio: project.ratio,
+                row: project.coverRow,
                 href: `/media/${project.slug}`,
                 alt: `${project.title}, ${project.gig}`,
                 // Title over a dark fade at the bottom of the photo. Shown on hover or keyboard

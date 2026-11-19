@@ -27,12 +27,11 @@ const Hero = ({
     buttons = {
         primary: {
             text: "Explore Dev Works",
-            url: "#about",
+            url: "#projects",
         },
         secondary: {
             text: "Explore Media Works",
             url: "/media",
-            target: "_blank",
         },
     },
 }: HeroProps) => {

@@ -3,8 +3,9 @@ import Footer from "@/components/footer";
 
 
 export const metadata: Metadata = {
-  title: "Alfonso Marquez",
-  description: "Portfolio",
+  title: "Privacy Policy — Alfonso Marquez",
+  description: "How Alfonso Marquez's portfolio site handles your data.",
+  alternates: { canonical: "/privacy" },
 };
 
 export const viewport: Viewport = {

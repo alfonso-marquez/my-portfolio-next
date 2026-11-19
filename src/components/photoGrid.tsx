@@ -8,6 +8,7 @@ export interface GridPhoto {
     ratio?: number // width / height, read from the file at build time (see lib/photoRatios); a different
                    // ratio than the file's crops the photo to fit (centred)
     full?: boolean // takes a full-width row by itself
+    row?: string // consecutive photos with the same key share a row of their own (tablet and desktop)
     href?: string // tile links to a page instead of calling onOpen
     label?: ReactNode // optional overlay, positioned against the photo frame
 }
@@ -61,6 +62,16 @@ const layoutRows = (photos: GridPhoto[], ratios: number[], rowWidth: number): nu
         run = []
     }
     photos.forEach((photo, i) => {
+        // A pinned row: the photos sharing a `row` key go together, as their own row. Phones
+        // show one photo per row, so pinning only applies to the wider layouts
+        if (photo.row && avoidSingles) {
+            if (photos[i - 1]?.row === photo.row) return // already placed with the first of its group
+            flush()
+            const group = [i]
+            while (photos[group.length + i]?.row === photo.row) group.push(group.length + i)
+            rows.push(group)
+            return
+        }
         // Only when the photos before it can fill a row; a lone photo left in front of a
         // full-width one would stretch huge, so the full one shares their row instead
         if (photo.full && (!run.length || runTotal() >= rowWidth * 0.6)) {
