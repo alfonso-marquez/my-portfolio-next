@@ -2,7 +2,7 @@
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
+import { FadeImage } from "@/components/fadeImage";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { useEffect, useState, useRef } from "react";
@@ -127,7 +127,7 @@ const Timeline = ({
                             className="rounded-xl border p-2 bg-card shadow-sm"
                         >
                             <div className="relative aspect-square w-full rounded-xl border border-dashed overflow-hidden">
-                                <Image
+                                <FadeImage
                                     src={stage.image}
                                     alt={stage.title}
                                     className="w-full h-full object-cover"

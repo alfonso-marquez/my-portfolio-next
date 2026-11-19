@@ -3,7 +3,7 @@
 import { useRef, useState } from "react"
 import * as DialogPrimitive from "@radix-ui/react-dialog"
 import { ChevronLeft, ChevronRight, XIcon } from "lucide-react"
-import Image from "next/image"
+import { FadeImage } from "@/components/fadeImage"
 import { PhotoGrid } from "@/components/photoGrid"
 
 interface GalleryPhoto {
@@ -59,8 +59,9 @@ const PhotoGallery = ({ title, photos }: { title: string, photos: GalleryPhoto[]
                                 <DialogPrimitive.Description className="sr-only">
                                     {[`Photo ${index + 1} of ${photos.length}`, current.description, current.device].filter(Boolean).join(" · ")}
                                 </DialogPrimitive.Description>
-                                <Image
+                                <FadeImage
                                     key={current.image}
+                                    skeleton={false}
                                     src={current.image}
                                     alt={altOf(index)}
                                     className="h-auto max-h-full w-auto max-w-full object-contain"

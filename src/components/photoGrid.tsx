@@ -1,6 +1,6 @@
 import type { ReactNode } from "react"
 import Link from "next/link"
-import Image from "next/image"
+import { FadeImage } from "@/components/fadeImage"
 
 export interface GridPhoto {
     image: string
@@ -107,11 +107,12 @@ const PhotoGrid = ({ photos, onOpen, rowWidths = [2, 3, 4] }: {
                             // Photo zooms inside its frame on hover; the label sits on top of it
                             const content = (
                                 <span className="relative block overflow-hidden">
-                                    <Image
+                                    <FadeImage
                                         src={photo.image}
                                         alt={photo.alt}
                                         style={{ aspectRatio: ratios[i] }}
-                                        className="block w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105 group-focus-visible:scale-105 motion-reduce:transition-none"
+                                        // Hover zoom; its transition lives in the shared .fade-image class
+                                        className="block w-full object-cover group-hover:scale-105 group-focus-visible:scale-105"
                                         width={Math.round(ratios[i] * 1000)}
                                         height={1000}
                                         sizes={`${Math.ceil((ratios[i] / rowTotal) * 100)}vw`}

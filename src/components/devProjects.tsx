@@ -1,7 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { devProjects as defaultDevProjects, type DevProject } from "@/lib/data";
 import { cn } from "@/lib/utils";
-import Image from "next/image";
+import { FadeImage } from "@/components/fadeImage";
 
 interface DevProjectsProps {
     badge?: string; // Small status pill above the heading, e.g. "Work in progress"
@@ -81,7 +81,7 @@ const ProjectCard = ({ project, width, divider }: { project: DevProject; width: 
                         width === "narrow" ? "aspect-[1.45]" : "aspect-[1.5] lg:aspect-[2.4]",
                     )}
                 >
-                    <Image
+                    <FadeImage
                         src={src}
                         alt={i === 0 ? project.title : `${project.title}, second screenshot`}
                         fill
